@@ -4,12 +4,11 @@ const Сolumn = require('./column.model')
 
 function createColumn(option) {
   const columns = []
-  for(let i=0; i < option.length; i) {
+  for(let i=0; i < option.length; i +=1) {
     columns.push(new Сolumn(option[i]))
   }
   return columns
 }
-
 
 class Board {
   constructor({
@@ -21,8 +20,6 @@ class Board {
     this.title = title;
     this.columns = createColumn(columns)
   }
-
-  
 
   static toResponse(board) {
     const {id, title, columns} = board

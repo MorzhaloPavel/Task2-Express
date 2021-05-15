@@ -10,10 +10,6 @@ const getAll = () => DB;
 
 const get = async id => {
   const user = await DB.filter(us => us.id === id)
-  if (!user) {
-    console.log('Error');
-  }
-  console.log(user[0]);
   return user[0]
 }
 

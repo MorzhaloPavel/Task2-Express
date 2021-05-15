@@ -9,11 +9,17 @@ router.route('/').get(async (req, res) => {
 
 router.route('/:id').get(async (req, res) => {
   const user = await usersService.get(req.params.id);
+  if(!user) {
+    res.status(404)
+  }
   res.status(200).send(User.toResponse(user));
 });
 
 router.route('/:id').delete(async (req, res) => {
-  await usersService.remove(req.params.id);
+  const user = await usersService.remove(req.params.id);
+  if(!user) {
+    res.status(404)
+  }
   res.sendStatus(200)
 });
 
@@ -27,6 +33,9 @@ router.route('/:id').put(async (req, res) => {
     req.params.id,
     User.fromRequest(req.body)
   );
+  if(!user) {
+    res.status(404)
+  }
   res.status(200).send(User.toResponse(user));
 });
 

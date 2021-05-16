@@ -1,9 +1,7 @@
-const Board = require('./boards.model')
+// const Board = require('./boards.model')
+const DBTASK = require('../tasks/tasks.memory.repository')
 
-let DB = [
-  new Board({title: '111111', columns: [{title:'11122211', order: 5}]}),
-  new Board({title: '222222', columns: [{title:'2222222', order: 3}]})
-]
+let DB = []
 
 const getAll = () => DB;
 
@@ -19,16 +17,16 @@ const save = async board => {
 
 const remove = async id => {
   DB = await DB.filter(bd => bd.id !== id)
+  DBTASK.removeTasksBoard(id)
 }
 
 const update = async (id, board) => {
-  const newList = DB.map(o => {
-    if (o.id === id) {
+  DB = DB.map(obj => {
+    if (obj.id === id) {
       return {id, ...board};
     }
-    return o
+    return obj
   })
-  DB = newList
   return get(id)
 }
 

@@ -1,4 +1,6 @@
 const User = require('./user.model')
+const DBTASK = require('../tasks/tasks.memory.repository')
+
 
 let DB = [
   new User({ id:'1', name: 'Test', login: 'test', password: 'test'}),
@@ -20,6 +22,7 @@ const save = async user => {
 
 const remove = async id => {
   DB = await DB.filter(us => us.id !== id)
+  DBTASK.removeUserTasks(id)
 }
 
 

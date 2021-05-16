@@ -16,10 +16,7 @@ router.route('/:id').get(async (req, res) => {
 });
 
 router.route('/:id').delete(async (req, res) => {
-  const user = await usersService.remove(req.params.id);
-  if(!user) {
-    res.status(404)
-  }
+  await usersService.remove(req.params.id);
   res.sendStatus(200)
 });
 

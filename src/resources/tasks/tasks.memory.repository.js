@@ -1,32 +1,29 @@
 // const Task = require('./tasks.model')
 
-let DB = []
+let DBTasks = []
 
-const getAll = (boardId) => DB.filter(all => all.boardId === boardId);
+const getAll = (boardId) => DBTasks.filter(all => all.boardId === boardId);
 
 const get = async (boardId, id) => {
-  const task = await DB.find(ts => ts.boardId === boardId && ts.id === id)
+  const task = await DBTasks.find(ts => ts.boardId === boardId && ts.id === id)
   return task
 }
 
 const save = async (task) => {
-  DB = [...DB, task]
+  DBTasks = [...DBTasks, task]
   return task
 }
 
 const remove = async (boardId, id) => {
-  DB = await DB.filter(ts => ts.id !== id && ts.boardId === boardId  )
+  DBTasks = await DBTasks.filter(ts => ts.id !== id && ts.boardId === boardId  )
 }
 
 const removeTasksBoard = async (boardId) => {
-  DB = await DB.filter(ts => ts.boardId !== boardId)
+  DBTasks = await DBTasks.filter(ts => ts.boardId !== boardId)
 }
 
 const removeUserTasks =  (userId) => {
-  DB =  DB.map(obj => {
-
-    // obj.userId = obj.userId === userId ? null : obj.userId ;
-
+  DBTasks =  DBTasks.map(obj => {
     if (obj.userId === userId) {
       return {...obj, userId: null};
     }
@@ -35,13 +32,12 @@ const removeUserTasks =  (userId) => {
 }
 
 const update = async (boardId, id, task) => {
-  const newList = DB.map(o => {
-    if (o.id === id && o.boardId === boardId) {
+  DBTasks = DBTasks.map(obj => {
+    if (obj.id === id && obj.boardId === boardId) {
       return {id, ...task};
     }
-    return o
+    return obj
   })
-  DB = newList
   return get(boardId, id)
 }
 

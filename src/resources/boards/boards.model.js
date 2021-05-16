@@ -1,7 +1,6 @@
 const { v4: uuidv4 } = require('uuid');
 const Сolumn = require('./column.model')
 
-
 function createColumn(option) {
   const columns = []
   for(let i=0; i < option.length; i +=1) {

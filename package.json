@@ -13,6 +13,7 @@
     "lint": "eslint --ext .js,.ts --fix src/",
     "test": "cross-env DEBUG=rs:* jest --testMatch \"<rootDir>/test/e2e/test/*.test.js\" --noStackTrace --runInBand",
     "test:auth": "cross-env DEBUG=rs:* TEST_MODE=auth jest --noStackTrace",
+    "typestart": "tsc && node build/app.js",
     "doc": ""
   },
   "keywords": [
@@ -53,6 +54,7 @@
     "yamljs": "0.3.0"
   },
   "devDependencies": {
+    "@types/express": "^4.17.11",
     "chai": "4.3.4",
     "concurrently": "^6.2.0",
     "debug": "4.3.1",
@@ -72,6 +74,7 @@
     "prettier": "2.2.1",
     "supertest": "6.1.3",
     "ts-node": "^10.0.0",
+    "tslint": "^6.1.3",
     "typescript": "^4.2.4"
   }
 }

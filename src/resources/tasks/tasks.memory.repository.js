@@ -6,7 +6,7 @@ let DBTasks = []
  * Get all tasks with DBTasks by boardId
  * @async
  * @param {string} boardId The task boardId
- * @returns {Promise<Array>} Array of objects(task)
+ * @returns {Promise<object>} Array of objects(task)
  */
 const getAll = async boardId => DBTasks.filter(all => all.boardId === boardId);
 
@@ -15,7 +15,7 @@ const getAll = async boardId => DBTasks.filter(all => all.boardId === boardId);
  * @async
  * @param {string} boardId The task boardId
  * @param {string} id The task id
- * @returns {Promise<Object>} The task
+ * @returns {Promise<object>} The task
  */
 const get = async (boardId, id) => {
   const task = await DBTasks.find(ts => ts.boardId === boardId && ts.id === id)

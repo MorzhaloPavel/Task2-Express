@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: boards/boards.memory.repository.js</title>
+    <title>JSDoc: Source: boards/boards.service.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: boards/boards.memory.repository.js</h1>
+    <h1 class="page-title">Source: boards/boards.service.js</h1>
 
     
 
@@ -26,72 +26,44 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const Board = require('./boards.model')
-const DBTASK = require('../tasks/tasks.memory.repository')
-
-let DBBoards = []
+            <pre class="prettyprint source linenums"><code>const boardsRepo = require('./boards.memory.repository');
 
 /**
- * Get all boards with DBBoards
- * @async
+ * Get all boards 
  * @returns {Promise&lt;object>} Array of objects(board)
  */
-const getAll = async () => DBBoards;
+const getAll = () => boardsRepo.getAll();
 
 /**
- * Get by id board with DBBoards
- * @async
+ * Get by id board 
  * @param {string} id The board id
  * @returns {Promise&lt;object>} The board
  */
-const get = async id => {
-  const board = await DBBoards.filter(bd => bd.id === id)
-  return board[0]
-}
+const get = id => boardsRepo.get(id);
 
 /**
- * Add new board in DBBoards
- * @async
+ * Add new board 
  * @param {Object} board The board object
  * @returns {Promise&lt;object>} The new board
  */
-const save = async board => {
-  const newBoard = new Board(board)
-  DBBoards = [...DBBoards, newBoard]
-  return newBoard
-}
+const save = board => boardsRepo.save(board)
 
 /**
- * Update by id board with DBBoards
- * @async
+ * Update by id board 
  * @param {string} id The board id
  * @param {Object} boardUp The new date board
  * @returns {Promise&lt;object>} The update board
  */
-const update = async (id, boardUp) => {
-  DBBoards = DBBoards.map(board => {
-    if (board.id === id) {
-      return {id, ...boardUp};
-    }
-    return board
-  })
-  return get(id)
-}
+const update = (id, board) => boardsRepo.update(id, board)
 
 /**
- * Remove by id board with DBBoards
- * @async
+ * Remove by id board 
  * @param {string} id The board id
  * @returns {Promise&lt;object>} The remove board
  */
-const remove = async id => {
-  const delBoard = get(id)
-  DBBoards = await DBBoards.filter(board => board.id !== id)
-  DBTASK.removeTasksBoard(id)
-  return delBoard
-}
+const remove = id => boardsRepo.remove(id)
 
-module.exports = { getAll, get, save, remove, update };
+module.exports = { getAll, get, remove, save, update};
 </code></pre>
         </article>
     </section>

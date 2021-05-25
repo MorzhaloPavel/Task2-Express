@@ -6,7 +6,7 @@ let DBBoards = []
 /**
  * Get all boards with DBBoards
  * @async
- * @returns {Promise<Array>} Array of objects(board)
+ * @returns {Promise<object>} Array of objects(board)
  */
 const getAll = async () => DBBoards;
 
@@ -14,7 +14,7 @@ const getAll = async () => DBBoards;
  * Get by id board with DBBoards
  * @async
  * @param {string} id The board id
- * @returns {Promise<Object>} The board
+ * @returns {Promise<object>} The board
  */
 const get = async id => {
   const board = await DBBoards.filter(bd => bd.id === id)
@@ -25,7 +25,7 @@ const get = async id => {
  * Add new board in DBBoards
  * @async
  * @param {Object} board The board object
- * @returns {Promise<Object>} The new board
+ * @returns {Promise<object>} The new board
  */
 const save = async board => {
   const newBoard = new Board(board)
@@ -38,7 +38,7 @@ const save = async board => {
  * @async
  * @param {string} id The board id
  * @param {Object} boardUp The new date board
- * @returns {Promise<Object>} The update board
+ * @returns {Promise<object>} The update board
  */
 const update = async (id, boardUp) => {
   DBBoards = DBBoards.map(board => {
@@ -54,7 +54,7 @@ const update = async (id, boardUp) => {
  * Remove by id board with DBBoards
  * @async
  * @param {string} id The board id
- * @returns {Promise<Object>} The remove board
+ * @returns {Promise<object>} The remove board
  */
 const remove = async id => {
   const delBoard = get(id)

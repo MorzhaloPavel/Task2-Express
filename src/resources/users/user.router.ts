@@ -5,8 +5,8 @@ const router = express.Router();
 const User = require('./user.model.ts');
 const usersService = require('./user.service.ts');
 
-const request = express.Request()
-const response = express.Response()
+const request = express.Request
+const response = express.Response
 
 router.route('/').get(async (req: typeof request, res: typeof response): Promise<void> => {
   const users = await usersService.getAll();

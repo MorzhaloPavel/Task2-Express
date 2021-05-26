@@ -5,8 +5,8 @@ const router = express.Router({mergeParams: true});
 const Task = require('./tasks.model.ts');
 const tasksService = require('./tasks.service.ts');
 
-const request = express.Request()
-const response = express.Response()
+const request = express.Request
+const response = express.Response
 
 router.route('/').get(async (req: typeof request, res: typeof response): Promise<void> => {
   const tasks = await tasksService.getAll(req.params.boardId);

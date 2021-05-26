@@ -42,7 +42,7 @@ const save = async (board: object): Promise<object> => {
  * @returns {Promise<object>} The update board
  */
 const update = async (id: string, boardUp: object) => {
-  DBBoards.map(board => {
+  DBBoards = DBBoards.map(board => {
     if (board.id === id) {
       return {id, ...boardUp};
     }

@@ -52,7 +52,7 @@ const save = async (boardId: string, task: object): Promise<object> => {
  * @returns {Promise<Object>} The update task
  */
 const update = async (boardId: string, id: string, taskUp: object): Promise<object> => {
-  DBTasks.map(task => {
+  DBTasks = DBTasks.map(task => {
     if (task.id === id && task.boardId === boardId) {
       return {id, ...taskUp};
     }
@@ -88,7 +88,7 @@ const removeTasksBoard = async (boardId: string) => {
  * @param {string} userId The task boardId
  */
 const AssignmentUserTasks = async (userId: string): Promise<void> => {
-  await DBTasks.map(obj => {
+  DBTasks = await DBTasks.map(obj => {
     if (obj.userId === userId) {
       return {...obj, userId: null};
     }

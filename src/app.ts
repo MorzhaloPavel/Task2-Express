@@ -7,9 +7,9 @@ const userRouter = require('./resources/users/user.router.ts');
 const boardsRouter = require('./resources/boards/boards.router.ts');
 const tasksRouter = require('./resources/tasks/tasks.router.ts');
 
-const request = express.Request()
-const response = express.Response()
-const nextFunction = express.NextFunction()
+const request = express.Request
+const response = express.Response
+const nextFunction = express.NextFunction
 
 const app = express();
 const swaggerDocument = YAML.load(path.join(__dirname, '../doc/api.yaml'));

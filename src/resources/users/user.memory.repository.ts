@@ -2,7 +2,16 @@ export {}
 const User = require('./user.model.ts')
 const DBTASK = require('../tasks/tasks.memory.repository.ts')
 
-let DBUsers: {id: string, name: string, login: string, password: string}[] = []
+interface ItempElement {
+  id: string,
+  name: string,
+  login: string,
+  password: string
+};
+
+interface Itemp extends Array<ItempElement> {};
+
+let DBUsers: Itemp = []
 
 /**
  * Get all users with DBUsers
@@ -42,7 +51,7 @@ const save = async (user: object) => {
  * @returns {Promise<object>} The update user
  */
 const update = async (id: string, userUp: object): Promise<object> => {
-  DBUsers.map(user => {
+  DBUsers = DBUsers.map(user => {
     if (user.id === id) {
       return {id, ...userUp};
     }

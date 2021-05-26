@@ -4,8 +4,8 @@ const express = require('express')
 const router = express.Router();
 const boardsService = require('./boards.service.ts');
 
-const request = express.Request()
-const response = express.Response()
+const request = express.Request
+const response = express.Response
 
 router.route('/').get(async (req: typeof request, res: typeof response) => {
   const boards = await boardsService.getAll();

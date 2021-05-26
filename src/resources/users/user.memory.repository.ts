@@ -1,6 +1,6 @@
 export {}
 const User = require('./user.model.ts')
-const DBTASK = require('../tasks/tasks.memory.repository')
+const DBTASK = require('../tasks/tasks.memory.repository.ts')
 
 let DBUsers: {id: string, name: string, login: string, password: string}[] = []
 

@@ -1,11 +1,12 @@
-const tasksRepo = require('./tasks.memory.repository');
+export {}
+const tasksRepo = require('./tasks.memory.repository.ts');
 
 /**
  * Get all tasks by boardId
  * @param {string} boardId The task boardId
  * @returns {Promise<object>} Array of objects(task)
  */
-const getAll = (boardId) => tasksRepo.getAll(boardId);
+const getAll = (boardId: string): Promise<object> => tasksRepo.getAll(boardId);
 
 /**
  * Get by id task by boardId
@@ -13,7 +14,7 @@ const getAll = (boardId) => tasksRepo.getAll(boardId);
  * @param {string} id The task id
  * @returns {Promise<object>} The task
  */
-const get = (boardId, id) => tasksRepo.get(boardId, id);
+const get = (boardId: string, id: string): Promise<object> => tasksRepo.get(boardId, id);
 
 /**
  * Add new task by boardId
@@ -21,7 +22,7 @@ const get = (boardId, id) => tasksRepo.get(boardId, id);
  * @param {Object} task The task object
  * @returns {Promise<Object>} The new task
  */
-const save = (boardId, task) => tasksRepo.save(boardId, task)
+const save = (boardId: string, task: object): Promise<object> => tasksRepo.save(boardId, task)
 
 /**
  * Update by id task by boardId
@@ -30,13 +31,13 @@ const save = (boardId, task) => tasksRepo.save(boardId, task)
  * @param {Object} taskUp The new date task
  * @returns {Promise<Object>} The update task
  */
-const update = (boardId, id, task) => tasksRepo.update(boardId, id, task)
+const update = (boardId: string, id: string, task: object): Promise<object> => tasksRepo.update(boardId, id, task)
 
 /**
  * Remove by id task by boardId
  * @param {string} boardId The task boardId
  * @param {string} id The task id
  */
-const remove = (boardId, id) => tasksRepo.remove(boardId, id)
+const remove = (boardId: string, id: string): Promise<object> => tasksRepo.remove(boardId, id)
 
 module.exports = { getAll, get, remove, save, update};

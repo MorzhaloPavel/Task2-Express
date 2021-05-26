@@ -4,7 +4,7 @@ const path = require('path');
 const YAML = require('yamljs');
 const userRouter = require('./resources/users/user.router.ts');
 const boardsRouter = require('./resources/boards/boards.router.ts');
-const tasksRouter = require('./resources/tasks/tasks.router');
+const tasksRouter = require('./resources/tasks/tasks.router.ts');
 
 const app = express();
 const swaggerDocument = YAML.load(path.join(__dirname, '../doc/api.yaml'));

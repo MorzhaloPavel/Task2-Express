@@ -1,6 +1,6 @@
 export {}
 const Board = require('./boards.model.ts')
-const DBTASK = require('../tasks/tasks.memory.repository')
+const DBTASK = require('../tasks/tasks.memory.repository.ts')
 
 let DBBoards: {id: string, title: string, columns: Array<object>}[] = []
 

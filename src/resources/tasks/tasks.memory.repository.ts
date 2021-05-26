@@ -1,6 +1,14 @@
-const Task = require('./tasks.model')
+export {}
+const Task = require('./tasks.model.ts')
 
-let DBTasks = []
+let DBTasks: {
+  id: string
+  title: string
+  order: number
+  description: string
+  userId: string
+  boardId: string
+  columnId: string}[] = []
 
 /**
  * Get all tasks with DBTasks by boardId
@@ -8,7 +16,7 @@ let DBTasks = []
  * @param {string} boardId The task boardId
  * @returns {Promise<object>} Array of objects(task)
  */
-const getAll = async boardId => DBTasks.filter(all => all.boardId === boardId);
+const getAll = async (boardId: string): Promise<object> => DBTasks.filter(all => all.boardId === boardId);
 
 /**
  * Get by id task with DBTasks by boardId
@@ -17,9 +25,9 @@ const getAll = async boardId => DBTasks.filter(all => all.boardId === boardId);
  * @param {string} id The task id
  * @returns {Promise<object>} The task
  */
-const get = async (boardId, id) => {
+const get = async (boardId: string, id: string): Promise<object> => {
   const task = await DBTasks.find(ts => ts.boardId === boardId && ts.id === id)
-  return task
+  return task!
 }
 
 /**
@@ -29,7 +37,7 @@ const get = async (boardId, id) => {
  * @param {Object} task The task object
  * @returns {Promise<Object>} The new task
  */
-const save = async (boardId, task) => {
+const save = async (boardId: string, task: object): Promise<object> => {
   const newTask = new Task({...task, boardId})
   DBTasks = [...DBTasks, newTask]
   return newTask
@@ -43,8 +51,8 @@ const save = async (boardId, task) => {
  * @param {Object} taskUp The new date task
  * @returns {Promise<Object>} The update task
  */
-const update = async (boardId, id, taskUp) => {
-  DBTasks = DBTasks.map(task => {
+const update = async (boardId: string, id: string, taskUp: object): Promise<object> => {
+  DBTasks.map(task => {
     if (task.id === id && task.boardId === boardId) {
       return {id, ...taskUp};
     }
@@ -59,7 +67,7 @@ const update = async (boardId, id, taskUp) => {
  * @param {string} boardId The task boardId
  * @param {string} id The task id
  */
-const remove = async (boardId, id) => {
+const remove = async (boardId: string, id: string): Promise<object> => {
   const delTask = get(boardId, id)
   DBTasks = await DBTasks.filter(ts => ts.id !== id && ts.boardId === boardId)
   return delTask
@@ -70,7 +78,7 @@ const remove = async (boardId, id) => {
  * @async
  * @param {string} boardId The task boardId
  */
-const removeTasksBoard = async (boardId) => {
+const removeTasksBoard = async (boardId: string) => {
   DBTasks = await DBTasks.filter(ts => ts.boardId !== boardId)
 }
 
@@ -79,8 +87,8 @@ const removeTasksBoard = async (boardId) => {
  * @async
  * @param {string} userId The task boardId
  */
-const AssignmentUserTasks = async (userId) => {
-  DBTasks =  DBTasks.map(obj => {
+const AssignmentUserTasks = async (userId: string): Promise<void> => {
+  await DBTasks.map(obj => {
     if (obj.userId === userId) {
       return {...obj, userId: null};
     }

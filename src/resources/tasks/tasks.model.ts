@@ -1,6 +1,21 @@
+export {}
 const { v4: uuidv4 } = require('uuid');
 
 class Task {
+  id: string
+
+  title: string
+
+  order: number
+
+  description: string
+
+  userId: string
+
+  boardId: string
+
+  columnId: string
+
   /**
    * Create a Task
    * 
@@ -36,7 +51,7 @@ class Task {
    * @param {Object} task Accept object {{id, title, order, description, userId, boardId, columnId}}
    * @returns {Object} Return object {{id, title, order, description, userId, boardId, columnId}}
    */
-  static toResponse(task) {
+  static toResponse(task: Task) {
     const {id, title, order, description, userId, boardId, columnId} = task
     return {id, title, order, description, userId, boardId, columnId}
   }

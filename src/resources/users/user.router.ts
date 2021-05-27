@@ -8,7 +8,7 @@ const usersService = require('./user.service.ts');
 const request = express.Request
 const response = express.Response
 
-router.route('/').get(async (req: typeof request, res: typeof response): Promise<void> => {
+router.route('/').get(async (_req: typeof request, res: typeof response): Promise<void> => {
   const users = await usersService.getAll();
   res.json(users.map(User.toResponse));
 });

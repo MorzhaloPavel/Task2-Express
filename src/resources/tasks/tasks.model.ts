@@ -10,7 +10,7 @@ class Task {
 
   description: string
 
-  userId: string
+  userId: string | null
 
   boardId: string
 

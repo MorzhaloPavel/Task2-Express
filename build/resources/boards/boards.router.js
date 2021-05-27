@@ -5,7 +5,7 @@ const router = express.Router();
 const boardsService = require('./boards.service');
 const request = express.Request;
 const response = express.Response;
-router.route('/').get(async (req, res) => {
+router.route('/').get(async (_req, res) => {
     const boards = await boardsService.getAll();
     await res.json(boards);
 });

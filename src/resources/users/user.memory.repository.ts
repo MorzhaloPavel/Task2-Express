@@ -2,16 +2,7 @@ export {}
 const User = require('./user.model.ts')
 const DBTASK = require('../tasks/tasks.memory.repository.ts')
 
-interface ItempElement {
-  id: string,
-  name: string,
-  login: string,
-  password: string
-};
-
-interface Itemp extends Array<ItempElement> {};
-
-let DBUsers: Itemp = []
+let DBUsers: typeof User[] = []
 
 /**
  * Get all users with DBUsers

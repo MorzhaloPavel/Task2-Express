@@ -74,9 +74,9 @@ const removeTasksBoard = async (boardId) => {
  * @param {string} userId The task boardId
  */
 const AssignmentUserTasks = async (userId) => {
-    DBTasks = await DBTasks.map(obj => {
+    DBTasks = DBTasks.map(obj => {
         if (obj.userId === userId) {
-            return { ...obj, userId: null };
+            return {...obj, userId: null};
         }
         return obj;
     });

@@ -8,7 +8,7 @@
     "downlevelIteration": false,
     "strict": true,
     "noUnusedLocals": true,
-    // "noUnusedParameters": true,
+    "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
@@ -18,13 +18,13 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true
   },
   "exclude": [
     "node_modules/"
   ],
   "include": [
-    "./src/**/*.ts",
-    "src/common/config.s"  
+    "./src/**/*.ts"
   ]
 }

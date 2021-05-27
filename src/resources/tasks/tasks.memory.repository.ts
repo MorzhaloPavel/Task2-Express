@@ -1,14 +1,7 @@
 export {}
 const Task = require('./tasks.model.ts')
 
-let DBTasks: {
-  id: string
-  title: string
-  order: number
-  description: string
-  userId: string
-  boardId: string
-  columnId: string}[] = []
+let DBTasks: typeof Task[] = []
 
 /**
  * Get all tasks with DBTasks by boardId
@@ -88,7 +81,7 @@ const removeTasksBoard = async (boardId: string) => {
  * @param {string} userId The task boardId
  */
 const AssignmentUserTasks = async (userId: string): Promise<void> => {
-  DBTasks = await DBTasks.map(obj => {
+  DBTasks = DBTasks.map(obj => {
     if (obj.userId === userId) {
       return {...obj, userId: null};
     }

@@ -4,17 +4,17 @@ const { v4: uuidv4 } = require('uuid');
 class Task {
   id: string
 
-  title: string
+  title?: string
 
-  order: number
+  order?: number
 
-  description: string
+  description?: string
 
-  userId: string | null
+  userId?: string | null
 
-  boardId: string
+  boardId?: string
 
-  columnId: string
+  columnId?: string
 
   /**
    * Create a Task
@@ -51,7 +51,7 @@ class Task {
    * @param {Object} task Accept object {{id, title, order, description, userId, boardId, columnId}}
    * @returns {Object} Return object {{id, title, order, description, userId, boardId, columnId}}
    */
-  static toResponse(task: Task) {
+  static toResponse(task: Task): Task {
     const {id, title, order, description, userId, boardId, columnId} = task
     return {id, title, order, description, userId, boardId, columnId}
   }

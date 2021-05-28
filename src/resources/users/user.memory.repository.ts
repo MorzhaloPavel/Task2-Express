@@ -28,7 +28,7 @@ const get = async (id: string): Promise<object> => {
  * @param {Object} user The user object
  * @returns {Promise<object>} The new user
  */
-const save = async (user: object) => {
+const save = async (user: object): Promise<object> => {
   const newUser = new User(user)
   DBUsers = [...DBUsers, newUser]
   return newUser
@@ -44,7 +44,7 @@ const save = async (user: object) => {
 const update = async (id: string, userUp: object): Promise<object> => {
   DBUsers = DBUsers.map(user => {
     if (user.id === id) {
-      return {id, ...userUp};
+      return {...user, ...userUp};
     }
     return user
   })

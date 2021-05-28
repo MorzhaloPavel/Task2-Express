@@ -2,7 +2,7 @@ export {}
 const { v4: uuidv4 } = require('uuid');
 const Сolumns = require('./column.model.ts')
 
-function createColumn(option: Array<object>) {
+function createColumn(option: typeof Сolumns[]) {
   const columns = []
   for(let i=0; i < option.length; i +=1) {
     columns.push(new Сolumns(option[i]))
@@ -15,7 +15,7 @@ class Board {
 
   title: string
 
-  columns: Array<object>
+  columns: typeof Сolumns[]
 
   /**
    * Create a Board

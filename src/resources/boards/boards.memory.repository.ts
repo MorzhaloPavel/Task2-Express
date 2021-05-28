@@ -41,10 +41,10 @@ const save = async (board: object): Promise<object> => {
  * @param {Object} boardUp The new date board
  * @returns {Promise<object>} The update board
  */
-const update = async (id: string, boardUp: object) => {
+const update = async (id: string, boardUp: object): Promise<object> => {
   DBBoards = DBBoards.map(board => {
     if (board.id === id) {
-      return {id, ...boardUp};
+      return {...board, ...boardUp};
     }
     return board
   })

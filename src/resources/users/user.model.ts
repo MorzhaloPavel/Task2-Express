@@ -8,7 +8,7 @@ class User {
 
   login: string
 
-  password: string
+  password?: string
 
   /**
    * Create class User
@@ -32,7 +32,7 @@ class User {
    * @param {Object} user Accept object {{id, name, login, password}}
    * @returns {Object} Return object {{id, name, login}}
    */
-  static toResponse(user: User) {
+  static toResponse(user: User): User {
     const { id, name, login } = user;
     return { id, name, login };
   }

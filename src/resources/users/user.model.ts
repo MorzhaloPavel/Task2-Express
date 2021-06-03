@@ -3,8 +3,11 @@ const { v4: uuidv4 } = require('uuid');
 
 class User {
   id: string
+
   name: string
+
   login: string
+
   password?: string
 
   constructor({

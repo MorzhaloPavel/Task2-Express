@@ -12,7 +12,9 @@ function createColumn(option: typeof Сolumns[]) {
 
 class Board {
   id: string
+
   title: string
+
   columns: typeof Сolumns[]
 
   constructor({

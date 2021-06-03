@@ -2,7 +2,9 @@ const { v4: uuidv4 } = require('uuid');
 
 class Сolumn {
   id: string
+
   title: string
+
   order: number
 
   constructor({

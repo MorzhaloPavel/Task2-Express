@@ -10,6 +10,7 @@ const nextFunction = express.NextFunction
 
 class ValidationError extends Error {
   status = BAD_REQUEST;
+
   text = getStatusText(this.status)
 }
 

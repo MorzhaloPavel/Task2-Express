@@ -1,1 +1,6 @@
 {"message":"    method: GET, URL: /boards/1111/tasks, query parameters: {}, request body: {} 200 [8ms]","level":"info"}
+{"message":"   ","level":"error"}
+{"message":"    method: GET,\n      URL: /users,\n      query parameters: {},\n      request body: {}, \n      200 [18ms]","level":"info"}
+{"message":"    method: GET, URL: /users, query parameters: {}, request body: {}, 304, [9ms]","level":"info"}
+{"message":"   Internal Server Error","level":"error"}
+{"message":"    method: GET, URL: /users, query parameters: {}, request body: {}, 200, [7ms]","level":"info"}

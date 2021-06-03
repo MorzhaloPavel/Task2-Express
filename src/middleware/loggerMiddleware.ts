@@ -1,7 +1,7 @@
 export {}
 const { finished } = require('stream');
 const express = require('express')
-const logger = require('./logger.ts');
+const logger = require('../common/logger.ts');
 
 const request = express.Request
 const response = express.Response
@@ -22,11 +22,13 @@ const loggerMiddleware = (req: typeof request, res: typeof response, next: typeo
     const ms = Date.now() - start;
     const { statusCode } = res;
     logger.info(
-      `method: ${method},
-      URL: ${decodeURI(url)},
-      query parameters: ${JSON.stringify(query)},
-      request body: ${JSON.stringify(body)}, 
-      ${statusCode} [${ms}ms]`
+      `method: ${method}, URL: ${decodeURI(
+        url
+      )}, query parameters: ${JSON.stringify(
+        query
+      )}, request body: ${JSON.stringify(
+        body
+      )}, ${statusCode}, [${ms}ms]`
     );
   });
 };

@@ -5,6 +5,7 @@ const path = require('path');
 const YAML = require('yamljs');
 
 const loggerMiddleware = require('./middleware/loggerMiddleware.ts')
+const errorHandler = require('./middleware/errorHandler.ts')
 const userRouter = require('./resources/users/user.router.ts');
 const boardsRouter = require('./resources/boards/boards.router.ts');
 const tasksRouter = require('./resources/tasks/tasks.router.ts');
@@ -21,5 +22,6 @@ app.use('/users', userRouter);
 app.use('/boards', boardsRouter);
 app.use('/boards/:boardId/tasks', tasksRouter);
 
+app.use(errorHandler)
 
 module.exports = app;

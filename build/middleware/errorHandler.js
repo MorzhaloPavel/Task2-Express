@@ -5,7 +5,7 @@ const errorHandler = (err, _req, res, next) => {
         res.status(err.status).send(err.message);
     }
     else {
-        logger.error(getStatusText(INTERNAL_SERVER_ERROR));
+        logger.error(err.message);
         res
             .status(INTERNAL_SERVER_ERROR)
             .send(getStatusText(INTERNAL_SERVER_ERROR));

@@ -2,8 +2,6 @@ import { finished } from 'stream'
 import express from 'express';
 import logger from '../utils/logger.js'
 
-
-
 const loggerMiddleware = (req: express.Request, res: express.Response, next: express.NextFunction): void => {
   if (req.originalUrl === '/') {
     res.send('Service is running!');

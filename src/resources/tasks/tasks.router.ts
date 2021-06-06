@@ -1,47 +1,75 @@
-export {}
-const express = require('express')
+import Express, { Router } from 'express';
+import { StatusCodes } from 'http-status-codes';
+import * as tasksService from './tasks.service.js';
+import Task from './tasks.model.js';
+import { errorResponse } from '../../utils/errorResponse.js';
 
-const router = express.Router({mergeParams: true});
-const Task = require('./tasks.model.ts');
-const tasksService = require('./tasks.service.ts');
+const router: Express.Router = Router({ mergeParams: true });
 
-const request = express.Request
-const response = express.Response
+router.route('/').get(async (req: Express.Request, res: Express.Response) => {
+  const { boardId } = req.params;
+  if (!boardId) return errorResponse(res, StatusCodes.BAD_REQUEST);
 
-router.route('/').get(async (req: typeof request, res: typeof response): Promise<void> => {
-  const tasks = await tasksService.getAll(req.params.boardId);
-  res.status(200).json(tasks.map(Task.toResponse));
+  const tasks = await tasksService.getAll(boardId);
+
+  if (!tasks) return errorResponse(res, StatusCodes.NOT_FOUND);
+
+  return res.status(StatusCodes.OK).json(tasks);
 });
 
-router.route('/').post(async (req: typeof request, res: typeof response): Promise<void> => {
-  const task = await tasksService.save(
-    req.params.boardId,
-    req.body
-  )
-  if(!task) { res.status(404).json() }
-  res.status(201).send(Task.toResponse(task));
-});
+router
+  .route('/:taskId')
+  .get(async (req: Express.Request, res: Express.Response) => {
+    const { taskId, boardId } = req.params;
+    if (!taskId || !boardId) return errorResponse(res, StatusCodes.BAD_REQUEST);
 
-router.route('/:id').get(async (req: typeof request, res: typeof response): Promise<void> => {
-  const task = await tasksService.get(req.params.boardId, req.params.id);
-  if(!task) { res.status(404).json() }
-  res.status(200).send(task);
-});
+    const task = await tasksService.get(boardId, taskId);
 
-router.route('/:id').put(async (req: typeof request, res: typeof response): Promise<void> => {
-  const task = await tasksService.update(
-    req.params.boardId,
-    req.params.id,
-    req.body
+    if (!task) return errorResponse(res, StatusCodes.NOT_FOUND);
+
+    return res.status(StatusCodes.OK).json(task);
+  });
+
+router.route('/').post(async (req: Express.Request, res: Express.Response) => {
+  const { boardId } = req.params;
+  const task = await tasksService.create(
+    new Task({
+      ...req.body,
+      boardId,
+    })
   );
-  if(!task) { res.status(404).json() }
-  res.status(200).send(task);
+
+  if (!task) return errorResponse(res, StatusCodes.BAD_REQUEST);
+
+  return res.status(StatusCodes.CREATED).json(task);
 });
 
-router.route('/:id').delete(async (req: typeof request, res: typeof response): Promise<void> => {
-  const task = await tasksService.remove(req.params.boardId, req.params.id)
-  if(!task) { res.status(404).json() }
-  res.status(200).send("Delete completed");
-});
+router
+  .route('/:taskId')
+  .put(async (req: Express.Request, res: Express.Response) => {
+    const { taskId, boardId } = req.params;
+    if (!taskId || !boardId) return errorResponse(res, StatusCodes.BAD_REQUEST);
 
-module.exports = router;
+    const taskData = req.body;
+    const task = await tasksService.update(boardId, taskId, taskData);
+
+    if (!task) return errorResponse(res, StatusCodes.BAD_REQUEST);
+
+    return res.status(StatusCodes.OK).json(task);
+  });
+
+router
+  .route('/:taskId')
+  .delete(async (req: Express.Request, res: Express.Response) => {
+    const { taskId, boardId } = req.params;
+    if (!taskId || !boardId) return errorResponse(res, StatusCodes.BAD_REQUEST);
+
+    const isSuccess = await tasksService.remove(boardId, taskId);
+
+    if (!isSuccess) {
+      return errorResponse(res, StatusCodes.NOT_FOUND);
+    }
+    return res.status(StatusCodes.NO_CONTENT).send();
+  });
+
+export { router };

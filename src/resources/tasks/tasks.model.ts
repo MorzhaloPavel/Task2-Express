@@ -1,30 +1,32 @@
-export {}
-const { v4: uuidv4 } = require('uuid');
+import { v4 as uuidv4 } from 'uuid';
+import { ITask } from '../../types.js';
 
-class Task {
-  id: string
+export default class Task {
+  id: string;
 
-  title?: string
+  title: string;
 
-  order?: number
+  order: number;
 
-  description?: string
+  description: string;
 
-  userId?: string | null
+  userId: string | null;
 
-  boardId?: string
+  boardId: string | null;
 
-  columnId?: string
+  columnId: string | null;
 
-  constructor({
-    id = uuidv4(),
-    title = 'TASK',
-    order = 0,
-    description = "TASK",
-    userId = 'userId',
-    boardId = 'boardId',
-    columnId = 'columnId'
-  } = {}) {
+  constructor(
+    {
+      id = uuidv4(),
+      title = 'Task',
+      description = 'Description',
+      order = 0,
+      userId = null,
+      boardId = null,
+      columnId = null,
+    } = {} as ITask
+  ) {
     this.id = id;
     this.title = title;
     this.order = order;
@@ -33,10 +35,4 @@ class Task {
     this.boardId = boardId;
     this.columnId = columnId;
   }
-
-  static toResponse(task: Task): Task {
-    const {id, title, order, description, userId, boardId, columnId} = task
-    return {id, title, order, description, userId, boardId, columnId}
-  }
 }
-module.exports = Task;

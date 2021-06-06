@@ -1,14 +1,20 @@
-export {}
-const boardsRepo = require('./boards.memory.repository.ts');
+import { IBoard } from '../../types.js';
+import * as boardRepo from './boards.memory.repository.js';
+import * as tasksService from '../tasks/tasks.service.js';
 
-const getAll = (): Promise<object> => boardsRepo.getAll();
+const getAll = (): Promise<IBoard[]> => boardRepo.getAll();
 
-const get = (id: string): Promise<object> => boardsRepo.get(id);
+const get = (id: string): Promise<IBoard | undefined> => boardRepo.get(id);
 
-const save = (board: object): Promise<object> => boardsRepo.save(board)
+const create = (board: IBoard): Promise<IBoard | undefined> =>
+  boardRepo.create(board);
 
-const update = (id: string, board: object): Promise<object> => boardsRepo.update(id, board)
+const update = (
+  id: string,
+  board: IBoard
+): Promise<IBoard | null | undefined> => boardRepo.update(id, board);
 
-const remove = (id: string): Promise<object> => boardsRepo.remove(id)
+const remove = (id: string): Promise<[boolean, boolean]> =>
+  Promise.all([tasksService.deleteAllTasksFromBoard(id), boardRepo.remove(id)]);
 
-module.exports = { getAll, get, remove, save, update};
+export { getAll, get, create, update, remove };

@@ -1,31 +1,26 @@
-export {}
-const { v4: uuidv4 } = require('uuid');
-const Сolumns = require('./column.model.ts')
+import { v4 as uuidv4 } from 'uuid';
+import { IColumn, IBoard } from '../../types.js';
+import Column from './column.model.js';
 
-function createColumn(option: typeof Сolumns[]) {
-  const columns = []
-  for(let i=0; i < option.length; i +=1) {
-    columns.push(new Сolumns(option[i]))
-  }
-  return columns
-}
+export class Board {
+  id: string;
 
-class Board {
-  id: string
+  title: string;
 
-  title: string
+  columns: IColumn[] | null;
 
-  columns: typeof Сolumns[]
-
-  constructor({
-    id = uuidv4(),
-    title = 'BOARD',
-    columns = []
-  } = {}) {
+  constructor(
+    { id = uuidv4(), title = 'Board', columns = null } = {} as IBoard
+  ) {
     this.id = id;
     this.title = title;
-    this.columns = createColumn(columns)
+    this.columns = Board.createColumns(columns);
+  }
+
+  static createColumns(columns: IColumn[] | null): IColumn[] {
+    if (Array.isArray(columns)) {
+      return columns.map((col: IColumn) => new Column({ ...col }));
+    }
+    return [new Column()];
   }
 }
-
-module.exports = Board;

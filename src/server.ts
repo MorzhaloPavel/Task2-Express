@@ -1,7 +1,6 @@
-export {}
-const { PORT } = require('./common/config.ts');
-const app = require('./app.ts');
+import { PORT } from './common/config.js';
+import app from './app.js';
 
 app.listen(PORT, () =>
-  console.log(`App is running on http://localhost:${PORT}`)
+  process.stdout.write(`App is running on http://localhost:${PORT}\n`)
 );

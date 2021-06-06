@@ -1,21 +1,16 @@
-const { v4: uuidv4 } = require('uuid');
+import { v4 as uuidv4 } from 'uuid';
+import { IColumn } from '../../types.js';
 
-class Сolumn {
-  id: string
+export default class Column {
+  id: string;
 
-  title: string
+  title: string;
 
-  order: number
+  order: number;
 
-  constructor({
-    id = uuidv4(),
-    title = 'BOARD',
-    order = 0
-  } = {}) {
+  constructor({ id = uuidv4(), title = 'Column', order = 0 } = {} as IColumn) {
     this.id = id;
     this.title = title;
-    this.order = order
+    this.order = order;
   }
 }
-
-module.exports = Сolumn;

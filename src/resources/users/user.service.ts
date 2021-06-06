@@ -1,14 +1,20 @@
-export {}
-const usersRepo = require('./user.memory.repository.ts');
+import * as usersRepo from './user.memory.repository.js';
+import * as tasksService from '../tasks/tasks.service.js';
+import { IUser } from '../../types.js';
 
-const getAll = (): Promise<object> => usersRepo.getAll();
+const getAll = (): Promise<IUser[]> => usersRepo.getAll();
 
-const get = (id: string): Promise<object> => usersRepo.get(id);
+const get = (id: string): Promise<IUser | undefined> => usersRepo.get(id);
 
-const save = (user: object): Promise<object> => usersRepo.save(user)
+const create = (user: IUser): Promise<IUser | undefined> =>
+  usersRepo.create(user);
 
-const update = (id: string, user: object): Promise<object> => usersRepo.update(id, user)
+const update = (
+  id: string,
+  userData: IUser
+): Promise<IUser | null | undefined> => usersRepo.update(id, userData);
 
-const remove = (id: string): Promise<object> => usersRepo.remove(id)
+const remove = (id: string): Promise<[boolean, boolean]> =>
+  Promise.all([usersRepo.remove(id), tasksService.deleteUserFromTask(id)]);
 
-module.exports = { getAll, get, remove, save, update};
+export { getAll, create, get, update, remove };

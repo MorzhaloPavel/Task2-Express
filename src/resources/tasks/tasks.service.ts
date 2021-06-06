@@ -1,14 +1,36 @@
-export {}
-const tasksRepo = require('./tasks.memory.repository.ts');
+import { ITask } from '../../types.js';
+import * as taskRepo from './tasks.memory.repository.js';
 
-const getAll = (boardId: string): Promise<object> => tasksRepo.getAll(boardId);
+const getAll = (boardId: string): Promise<ITask[]> => taskRepo.getAll(boardId);
 
-const get = (boardId: string, id: string): Promise<object> => tasksRepo.get(boardId, id);
+const get = (boardId: string, taskId: string): Promise<ITask | undefined> =>
+  taskRepo.get(boardId, taskId);
 
-const save = (boardId: string, task: object): Promise<object> => tasksRepo.save(boardId, task)
+const create = (taskData: ITask): Promise<ITask | undefined> =>
+  taskRepo.create(taskData);
 
-const update = (boardId: string, id: string, task: object): Promise<object> => tasksRepo.update(boardId, id, task)
+const update = (
+  boardId: string,
+  taskId: string,
+  taskData: ITask
+): Promise<ITask | null | undefined> =>
+  taskRepo.update(boardId, taskId, taskData);
 
-const remove = (boardId: string, id: string): Promise<object> => tasksRepo.remove(boardId, id)
+const remove = (boardId: string, taskId: string): Promise<boolean> =>
+  taskRepo.remove(boardId, taskId);
 
-module.exports = { getAll, get, remove, save, update};
+const deleteAllTasksFromBoard = (boardId: string): Promise<boolean> =>
+  taskRepo.deleteTasksFromBoard(boardId);
+
+const deleteUserFromTask = (userId: string): Promise<boolean> =>
+  taskRepo.deleteUserFromTask(userId);
+
+export {
+  getAll,
+  get,
+  create,
+  update,
+  remove,
+  deleteAllTasksFromBoard,
+  deleteUserFromTask,
+};

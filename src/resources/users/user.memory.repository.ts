@@ -1,37 +1,35 @@
-export {}
-const User = require('./user.model.ts')
-const DBTASK = require('../tasks/tasks.memory.repository.ts')
+import { memoryDb } from '../../memoryDb/memoryDb.js';
+import { IUser } from '../../types.js';
 
-let DBUsers: typeof User[] = []
+const { users } = memoryDb;
 
-const getAll = async (): Promise<object> => DBUsers;
+const getAll = async (): Promise<IUser[]> => [...users];
 
-const get = async (id: string): Promise<object> => {
-  const user = await DBUsers.filter(us => us.id === id)
-  return user[0]!
-}
+const get = async (id: string): Promise<IUser | undefined> =>
+  users.find((user) => user.id === id);
 
-const save = async (user: object): Promise<object> => {
-  const newUser = new User(user)
-  DBUsers = [...DBUsers, newUser]
-  return newUser
-}
+const create = async (user: IUser): Promise<IUser | undefined> => {
+  users.push(user);
+  return get(user.id);
+};
 
-const update = async (id: string, userUp: object): Promise<object> => {
-  DBUsers = DBUsers.map(user => {
-    if (user.id === id) {
-      return {...user, ...userUp};
-    }
-    return user
-  })
-  return get(id)
-}
+const update = async (
+  id: string,
+  userData: IUser
+): Promise<IUser | null | undefined> => {
+  const index = users.findIndex((user) => user.id === id);
+  if (index !== -1) {
+    users[index] = { ...users[index], ...userData, id };
+    return get(id);
+  }
+  return null;
+};
 
- const remove = async (id: string): Promise<object> => {
-  const delUser = get(id)
-  DBUsers = await DBUsers.filter(user => user.id !== id)
-  DBTASK.AssignmentUserTasks(id)
-  return delUser
-}
+const remove = async (userId: string): Promise<boolean> => {
+  const index = users.findIndex((user) => user.id === userId);
+  if (index === -1) return false;
 
-module.exports = { getAll, get, save, remove, update };
+  return !!users.splice(index, 1).length;
+};
+
+export { getAll, get, create, update, remove };

@@ -1,43 +1,61 @@
-export {}
-const express = require('express')
+import Express, { Router } from 'express';
+import { StatusCodes } from 'http-status-codes';
+import User from './user.model.js';
+import * as usersService from './user.service.js';
+import { errorResponse } from '../../utils/errorResponse.js';
 
-const router = express.Router();
-const User = require('./user.model.ts');
-const usersService = require('./user.service.ts');
+const router: Express.Router = Router();
 
-const request = express.Request
-const response = express.Response
-
-router.route('/').get(async (_req: typeof request, res: typeof response): Promise<void> => {
+router.route('/').get(async (_req: Express.Request, res: Express.Response) => {
   const users = await usersService.getAll();
-  res.json(users.map(User.toResponse));
+  if (!users) return errorResponse(res, StatusCodes.NOT_FOUND);
+
+  return res.status(StatusCodes.OK).json(users.map(User.toResponse));
 });
 
-router.route('/:id').get(async (req:  typeof request, res: typeof response): Promise<void> => {
-  const user = await usersService.get(req.params.id);
-  if(!user) { res.status(404).json() }
-  res.status(200).send(User.toResponse(user));
+router
+  .route('/:id')
+  .get(async (req: Express.Request, res: Express.Response) => {
+    const { id } = req.params;
+    if (!id) return errorResponse(res, StatusCodes.BAD_REQUEST);
+
+    const user = await usersService.get(id);
+    if (!user) return errorResponse(res, StatusCodes.NOT_FOUND);
+
+    return res.status(StatusCodes.OK).json(User.toResponse(user));
+  });
+
+router.route('/').post(async (req: Express.Request, res: Express.Response) => {
+  const user = await usersService.create(new User({ ...req.body }));
+  if (!user) return errorResponse(res, StatusCodes.BAD_REQUEST);
+
+  return res.status(StatusCodes.CREATED).json(User.toResponse(user));
 });
 
-router.route('/').post(async (req:  typeof request, res: typeof response): Promise<void> => {
-  const user = await usersService.save(req.body);
-  if(!user) { res.status(404).json() }
-  res.status(201).send(User.toResponse(user));
-});
+router
+  .route('/:id')
+  .put(async (req: Express.Request, res: Express.Response) => {
+    const { id } = req.params;
+    if (!id) return errorResponse(res, StatusCodes.BAD_REQUEST);
 
-router.route('/:id').put(async (req:  typeof request, res: typeof response): Promise<void> => {
-  const user = await usersService.update(
-    req.params.id,
-    req.body
-  );
-  if(!user) { res.status(404).json() }
-  res.status(200).send(User.toResponse(user));
-});
+    const userData = req.body;
+    const user = await usersService.update(id, userData);
+    if (!user) return errorResponse(res, StatusCodes.BAD_REQUEST);
 
-router.route('/:id').delete(async (req:  typeof request, res: typeof response): Promise<void> => {
-  const user = await usersService.remove(req.params.id);
-  if(!user) { res.status(404).json() }
-  res.status(200).send("Delete completed")
-});
+    return res.status(StatusCodes.OK).json(User.toResponse(user));
+  });
 
-module.exports = router;
+router
+  .route('/:id')
+  .delete(async (req: Express.Request, res: Express.Response) => {
+    const { id } = req.params;
+    if (!id) return errorResponse(res, StatusCodes.BAD_REQUEST);
+
+    const answer = await usersService.remove(id);
+    if (!answer.every((item) => !!item)) {
+      return errorResponse(res, StatusCodes.NOT_FOUND);
+    }
+    return res.status(StatusCodes.NO_CONTENT).send();
+  });
+
+export { router };

@@ -32,3 +32,8 @@ export interface IDatabase {
   boards: IBoard[];
   tasks: ITask[];
 }
+
+export interface IError {
+  status: number;
+  message: string;
+}

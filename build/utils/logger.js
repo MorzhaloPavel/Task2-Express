@@ -12,7 +12,7 @@ const logger = createLogger({
         }),
         new transports.File({
             filename: './logger/info.log',
-            level: 'silly',
+            level: 'info',
             format: format.combine(format.uncolorize(), format.json())
         })
     ]

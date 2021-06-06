@@ -1,7 +1,14 @@
 import { memoryDb } from '../../memoryDb/memoryDb.js';
+import ErrorNotFound from '../../utils/ErrorNotFound.js';
 let { tasks } = memoryDb;
 const getAll = async (boardId) => tasks.filter((task) => task.boardId === boardId);
-const get = async (boardId, taskId) => tasks.find((task) => task.id === taskId && task.boardId === boardId);
+const get = async (boardId, taskId) => {
+    const task = await tasks.find(ts => ts.boardId === boardId && ts.id === taskId);
+    if (!task) {
+        throw new ErrorNotFound("Not Found!");
+    }
+    return task;
+};
 const create = async (task) => {
     if (!task.boardId)
         return undefined;

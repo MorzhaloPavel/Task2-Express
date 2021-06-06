@@ -3,7 +3,7 @@ import * as taskRepo from './tasks.memory.repository.js';
 
 const getAll = (boardId: string): Promise<ITask[]> => taskRepo.getAll(boardId);
 
-const get = (boardId: string, taskId: string): Promise<ITask | undefined> =>
+const get = (boardId: string, taskId: string): Promise<ITask> =>
   taskRepo.get(boardId, taskId);
 
 const create = (taskData: ITask): Promise<ITask | undefined> =>

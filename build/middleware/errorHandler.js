@@ -1,15 +1,10 @@
-import { INTERNAL_SERVER_ERROR, getStatusText } from 'http-status-codes';
 import logger from '../utils/logger.js';
 const errorHandler = (err, _req, res, next) => {
-    if (err.status) {
-        res.status(err.status).send(err.message);
-    }
-    else {
-        logger.error(err.message);
-        res
-            .status(INTERNAL_SERVER_ERROR)
-            .send(getStatusText(INTERNAL_SERVER_ERROR));
-    }
+    logger.error(err);
+    res.status(err.status || 500).send({ error: {
+            error: err.status || 500,
+            message: err.message || 'Oppss!'
+        } });
     next();
 };
 export default errorHandler;

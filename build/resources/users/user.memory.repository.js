@@ -1,7 +1,14 @@
 import { memoryDb } from '../../memoryDb/memoryDb.js';
+import ErrorNotFound from '../../utils/ErrorNotFound.js';
 const { users } = memoryDb;
 const getAll = async () => [...users];
-const get = async (id) => users.find((user) => user.id === id);
+const get = async (id) => {
+    const user = await users.filter(us => us.id === id);
+    if (!user) {
+        throw new ErrorNotFound("Not Found!");
+    }
+    return user[0];
+};
 const create = async (user) => {
     users.push(user);
     return get(user.id);

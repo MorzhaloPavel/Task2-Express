@@ -1,16 +1,20 @@
 import { memoryDb } from '../../memoryDb/memoryDb.js';
 import { ITask } from '../../types.js';
+import ErrorNotFound from '../../utils/ErrorNotFound.js';
 
 let { tasks } = memoryDb;
 
 const getAll = async (boardId: string): Promise<ITask[]> =>
   tasks.filter((task) => task.boardId === boardId);
 
-const get = async (
-  boardId: string,
-  taskId: string
-): Promise<ITask | undefined> =>
-  tasks.find((task) => task.id === taskId && task.boardId === boardId);
+const get = async (boardId: string, taskId: string): Promise<ITask> => {
+  
+  const task = await tasks.find(ts => ts.boardId === boardId && ts.id === taskId)
+  if(!task){
+    throw new ErrorNotFound("Not Found!");
+  }
+  return task
+}
 
 const create = async (task: ITask): Promise<ITask | undefined> => {
   if (!task.boardId) return undefined;

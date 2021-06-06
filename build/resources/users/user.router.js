@@ -12,14 +12,10 @@ router.route('/').get(async (_req, res) => {
 });
 router
     .route('/:id')
-    .get(async (req, res) => {
-    const { id } = req.params;
-    if (!id)
-        return errorResponse(res, StatusCodes.BAD_REQUEST);
-    const user = await usersService.get(id);
-    if (!user)
-        return errorResponse(res, StatusCodes.NOT_FOUND);
-    return res.status(StatusCodes.OK).json(User.toResponse(user));
+    .get(async (req, res, next) => {
+    await usersService.get(req.params["id"]).then(user => {
+        res.status(200).json(User.toResponse(user));
+    }).catch(next);
 });
 router.route('/').post(async (req, res) => {
     const user = await usersService.create(new User({ ...req.body }));

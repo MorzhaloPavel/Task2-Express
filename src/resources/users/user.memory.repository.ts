@@ -1,13 +1,20 @@
 import { memoryDb } from '../../memoryDb/memoryDb.js';
 import { IUser } from '../../types.js';
+import ErrorNotFound from '../../utils/ErrorNotFound.js';
+
 
 const { users } = memoryDb;
 
 const getAll = async (): Promise<IUser[]> => [...users];
 
-const get = async (id: string): Promise<IUser | undefined> =>
-  users.find((user) => user.id === id);
-
+const get = async (id: string): Promise<IUser> => {
+  const user = await users.filter(us => us.id === id)
+  if(!user){
+    throw new ErrorNotFound("Not Found!");
+  }
+  return user[0]!
+}
+  
 const create = async (user: IUser): Promise<IUser | undefined> => {
   users.push(user);
   return get(user.id);

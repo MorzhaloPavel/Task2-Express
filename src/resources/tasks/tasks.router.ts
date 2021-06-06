@@ -19,15 +19,10 @@ router.route('/').get(async (req: Express.Request, res: Express.Response) => {
 
 router
   .route('/:taskId')
-  .get(async (req: Express.Request, res: Express.Response) => {
-    const { taskId, boardId } = req.params;
-    if (!taskId || !boardId) return errorResponse(res, StatusCodes.BAD_REQUEST);
-
-    const task = await tasksService.get(boardId, taskId);
-
-    if (!task) return errorResponse(res, StatusCodes.NOT_FOUND);
-
-    return res.status(StatusCodes.OK).json(task);
+  .get(async (req: Express.Request, res: Express.Response, next: Express.NextFunction) => {
+    await tasksService.get(req.params["boardId"]!, req.params["taskId"]!).then(task => {
+      res.status(200).json(task);
+    }).catch(next);
   });
 
 router.route('/').post(async (req: Express.Request, res: Express.Response) => {

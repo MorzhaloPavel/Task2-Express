@@ -1,6 +1,6 @@
 import express from 'express'
-import logger from '../utils/logger.js'
-import {IError} from '../types.js'
+import logger from '../utils/logger'
+import {IError} from '../types'
 
 const errorHandler = (err: IError, _req: express.Request, res: express.Response, next: express.NextFunction) : void => {
   logger.error(err);

@@ -1,6 +1,6 @@
-import { memoryDb } from '../../memoryDb/memoryDb.js';
-import { IUser } from '../../types.js';
-import ErrorNotFound from '../../utils/ErrorNotFound.js';
+import { memoryDb } from '../../memoryDb/memoryDb';
+import { IUser } from '../../types';
+import ErrorNotFound from '../../utils/ErrorNotFound';
 
 
 const { users } = memoryDb;
@@ -12,7 +12,7 @@ const get = async (id: string): Promise<IUser> => {
   if(!user){
     throw new ErrorNotFound("Not Found!");
   }
-  return user[0]!
+  return user[0]
 }
   
 const create = async (user: IUser): Promise<IUser | undefined> => {

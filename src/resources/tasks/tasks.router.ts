@@ -1,8 +1,8 @@
 import Express, { Router } from 'express';
 import { StatusCodes } from 'http-status-codes';
-import * as tasksService from './tasks.service.js';
-import Task from './tasks.model.js';
-import { errorResponse } from '../../utils/errorResponse.js';
+import * as tasksService from './tasks.service';
+import Task from './tasks.model';
+import { errorResponse } from '../../utils/errorResponse';
 
 const router: Express.Router = Router({ mergeParams: true });
 
@@ -20,7 +20,7 @@ router.route('/').get(async (req: Express.Request, res: Express.Response) => {
 router
   .route('/:taskId')
   .get(async (req: Express.Request, res: Express.Response, next: Express.NextFunction) => {
-    await tasksService.get(req.params["boardId"]!, req.params["taskId"]!).then(task => {
+    await tasksService.get(req.params["boardId"], req.params["taskId"]).then(task => {
       res.status(200).json(task);
     }).catch(next);
   });

@@ -5,15 +5,14 @@ services:
     build: .
     ports: 
       - ${PORT}:${PORT}
-    command: npm run start
     env_file: 
       - .env
     volumes: 
-      - logger:/logger
+      - .:/usr/app
     networks:
       - my-bridge
     environment: 
-      - PORT=8080
+      - PORT=${PORT}
     depends_on: 
       - postgres
     restart: always
@@ -40,4 +39,3 @@ networks:
 
 volumes: 
   pgdata:
-  logger:

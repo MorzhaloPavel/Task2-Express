@@ -6,17 +6,38 @@ services:
     ports: 
       - ${PORT}:${PORT}
     command: npm run start
+    env_file: 
+      - .env
+    volumes: 
+      - logger:/logger
+    networks:
+      - my-bridge
     environment: 
       - PORT=8080
     depends_on: 
       - postgres
     restart: always
+
   postgres:
     build: ./database/
+    env_file: 
+      - .env
+    networks:
+      - my-bridge
     ports: 
       - ${POSTGRES_PORT}:${POSTGRES_PORT}
+    volumes: 
+      - pgdata:/var/lib/postgresql/data
     environment: 
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB}
     restart: always
+
+networks: 
+  my-bridge:
+    driver: bridge
+
+volumes: 
+  pgdata:
+  logger:

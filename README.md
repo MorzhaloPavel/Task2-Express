@@ -70,3 +70,82 @@ npm run lint
 Press <kbd>F5</kbd> to debug.
 
 For more information, visit: https://code.visualstudio.com/docs/editor/debugging
+
+
+# Docker
+
+## Running application
+
+```
+docker-compose up 
+```
+
+## Получение информации о контейнерах
+
+### Работающие контейнеры
+```
+docker ps
+
+docker ps -a
+```
+### Логи контейнера
+```
+docker logs infinite
+```
+### Информация о контейнере
+```
+docker inspect infinite
+```
+
+## Управление образами
+
+### Список образов
+```
+docker images
+```
+### Создание образов
+```
+docker build .
+
+docker build github.com/creack/docker-firefox
+
+docker build - < Dockerfile
+
+docker build - < context.tar.gz
+
+docker build -t eon/infinite .
+
+docker build -f myOtherDockerfile .
+
+curl example.com/remote/Dockerfile | docker build -f - .
+```
+### Удаление образа
+```
+docker rmi nginx
+```
+### Загрузка репозитория в tar (из файла или стандартного ввода)
+```
+docker load < ubuntu.tar.gz
+
+docker load --input ubuntu.tar
+```
+### Сохранение образа в tar-архив
+```
+docker save busybox > ubuntu.tar
+```
+### Просмотр истории образа
+```
+docker history
+```
+### Создание образа из контейнера
+```
+docker commit nginx
+```
+### Тегирование образа
+```
+docker tag nginx eon01/nginx
+```
+### Push (загрузка в реестр) образа
+```
+docker push eon01/nginx
+```

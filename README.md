@@ -80,30 +80,30 @@ For more information, visit: https://code.visualstudio.com/docs/editor/debugging
 docker-compose up 
 ```
 
-## Получение информации о контейнерах
+## Getting information about containers
 
-### Работающие контейнеры
+### Working containers
 ```
 docker ps
 
 docker ps -a
 ```
-### Логи контейнера
+### Container logs
 ```
 docker logs infinite
 ```
-### Информация о контейнере
+### Container Information
 ```
 docker inspect infinite
 ```
 
-## Управление образами
+## Image Management
 
-### Список образов
+### List of images
 ```
 docker images
 ```
-### Создание образов
+### Creating images
 ```
 docker build .
 
@@ -119,33 +119,33 @@ docker build -f myOtherDockerfile .
 
 curl example.com/remote/Dockerfile | docker build -f - .
 ```
-### Удаление образа
+### Deleting an image
 ```
 docker rmi nginx
 ```
-### Загрузка репозитория в tar (из файла или стандартного ввода)
+### Loading a repository in tar (from a file or standard input)
 ```
 docker load < ubuntu.tar.gz
 
 docker load --input ubuntu.tar
 ```
-### Сохранение образа в tar-архив
+### Saving an image to a tar archive
 ```
 docker save busybox > ubuntu.tar
 ```
-### Просмотр истории образа
+### View Image History
 ```
 docker history
 ```
-### Создание образа из контейнера
+### Creating an image from a container
 ```
 docker commit nginx
 ```
-### Тегирование образа
+### Tagging an image
 ```
 docker tag nginx eon01/nginx
 ```
-### Push (загрузка в реестр) образа
+### Push (uploading to the registry) of the image
 ```
 docker push eon01/nginx
 ```

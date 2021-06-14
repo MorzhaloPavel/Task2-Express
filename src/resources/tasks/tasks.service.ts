@@ -1,43 +1,36 @@
-export {}
-const tasksRepo = require('./tasks.memory.repository.ts');
+import { ITask } from '../../types.js';
+import * as taskRepo from './tasks.memory.repository.js';
 
-/**
- * Get all tasks by boardId
- * @param {string} boardId The task boardId
- * @returns {Promise<object>} Array of objects(task)
- */
-const getAll = (boardId: string): Promise<object> => tasksRepo.getAll(boardId);
+const getAll = (boardId: string): Promise<ITask[]> => taskRepo.getAll(boardId);
 
-/**
- * Get by id task by boardId
- * @param {string} boardId The task boardId
- * @param {string} id The task id
- * @returns {Promise<object>} The task
- */
-const get = (boardId: string, id: string): Promise<object> => tasksRepo.get(boardId, id);
+const get = (boardId: string, taskId: string): Promise<ITask> =>
+  taskRepo.get(boardId, taskId);
 
-/**
- * Add new task by boardId
- * @param {string} boardId The task boardId
- * @param {Object} task The task object
- * @returns {Promise<Object>} The new task
- */
-const save = (boardId: string, task: object): Promise<object> => tasksRepo.save(boardId, task)
+const create = (taskData: ITask): Promise<ITask | undefined> =>
+  taskRepo.create(taskData);
 
-/**
- * Update by id task by boardId
- * @param {string} boardId The task boardId
- * @param {string} id The task id
- * @param {Object} taskUp The new date task
- * @returns {Promise<Object>} The update task
- */
-const update = (boardId: string, id: string, task: object): Promise<object> => tasksRepo.update(boardId, id, task)
+const update = (
+  boardId: string,
+  taskId: string,
+  taskData: ITask
+): Promise<ITask | null | undefined> =>
+  taskRepo.update(boardId, taskId, taskData);
 
-/**
- * Remove by id task by boardId
- * @param {string} boardId The task boardId
- * @param {string} id The task id
- */
-const remove = (boardId: string, id: string): Promise<object> => tasksRepo.remove(boardId, id)
+const remove = (boardId: string, taskId: string): Promise<boolean> =>
+  taskRepo.remove(boardId, taskId);
 
-module.exports = { getAll, get, remove, save, update};
+const deleteAllTasksFromBoard = (boardId: string): Promise<boolean> =>
+  taskRepo.deleteTasksFromBoard(boardId);
+
+const deleteUserFromTask = (userId: string): Promise<boolean> =>
+  taskRepo.deleteUserFromTask(userId);
+
+export {
+  getAll,
+  get,
+  create,
+  update,
+  remove,
+  deleteAllTasksFromBoard,
+  deleteUserFromTask,
+};

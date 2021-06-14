@@ -1,92 +1,80 @@
-export {}
-const Task = require('./tasks.model.ts')
+import { memoryDb } from '../../memoryDb/memoryDb.js';
+import { ITask } from '../../types.js';
+import ErrorNotFound from '../../utils/ErrorNotFound.js';
 
-let DBTasks: typeof Task[] = []
+let { tasks } = memoryDb;
 
-/**
- * Get all tasks with DBTasks by boardId
- * @async
- * @param {string} boardId The task boardId
- * @returns {Promise<object>} Array of objects(task)
- */
-const getAll = async (boardId: string): Promise<object> => DBTasks.filter(all => all.boardId === boardId);
+const getAll = async (boardId: string): Promise<ITask[]> =>
+  tasks.filter((task) => task.boardId === boardId);
 
-/**
- * Get by id task with DBTasks by boardId
- * @async
- * @param {string} boardId The task boardId
- * @param {string} id The task id
- * @returns {Promise<object>} The task
- */
-const get = async (boardId: string, id: string): Promise<object> => {
-  const task = await DBTasks.find(ts => ts.boardId === boardId && ts.id === id)
-  return task!
+const get = async (boardId: string, taskId: string): Promise<ITask> => {
+  
+  const task = await tasks.find(ts => ts.boardId === boardId && ts.id === taskId)
+  if(!task){
+    throw new ErrorNotFound("Not Found!");
+  }
+  return task
 }
 
-/**
- * Add new task in DBTasks by boardId
- * @async
- * @param {string} boardId The task boardId
- * @param {Object} task The task object
- * @returns {Promise<Object>} The new task
- */
-const save = async (boardId: string, task: object): Promise<object> => {
-  const newTask = new Task({...task, boardId})
-  DBTasks = [...DBTasks, newTask]
-  return newTask
-}
+const create = async (task: ITask): Promise<ITask | undefined> => {
+  if (!task.boardId) return undefined;
 
-/**
- * Update by id task in DBTasks by boardId
- * @async
- * @param {string} boardId The task boardId
- * @param {string} id The task id
- * @param {Object} taskUp The new date task
- * @returns {Promise<Object>} The update task
- */
-const update = async (boardId: string, id: string, taskUp: object): Promise<object> => {
-  DBTasks = DBTasks.map(task => {
-    if (task.id === id && task.boardId === boardId) {
-      return {...task, ...taskUp};
-    }
-    return task
-  })
-  return get(boardId, id)
-}
+  tasks.push(task);
+  return get(task.boardId, task.id);
+};
 
-/**
- * Remove by id task in DBTasks by boardId
- * @async
- * @param {string} boardId The task boardId
- * @param {string} id The task id
- */
-const remove = async (boardId: string, id: string): Promise<object> => {
-  const delTask = get(boardId, id)
-  DBTasks = await DBTasks.filter(ts => ts.id !== id && ts.boardId === boardId)
-  return delTask
-}
+const update = async (
+  boardId: string,
+  taskId: string,
+  taskData: ITask
+): Promise<ITask | null | undefined> => {
+  const index = tasks.findIndex(
+    (task) => task.id === taskId && task.boardId === boardId
+  );
 
-/**
- * Remove task in DBTasks by boardId
- * @async
- * @param {string} boardId The task boardId
- */
-const removeTasksBoard = async (boardId: string): Promise<void> => {
-  DBTasks = await DBTasks.filter(ts => ts.boardId !== boardId)
-}
+  if (index === -1) return null;
+  tasks[index] = { ...tasks[index], ...taskData, id: taskId };
+  return get(boardId, taskId);
+};
 
-/**
- * Assignment tasks in DBTasks userId = null
- * @async
- * @param {string} userId The task boardId
- */
-const AssignmentUserTasks = async (userId: string): Promise<void> => {
-  DBTasks = DBTasks.map(obj => {
-    if (obj.userId === userId) {
-      return {...obj, userId: null};
-    }
-    return obj
-  })
-}
+const remove = async (boardId: string, taskId: string): Promise<boolean> => {
+  const index = tasks.findIndex(
+    (task) => task.id === taskId && task.boardId === boardId
+  );
+  if (index === -1) return false;
 
-module.exports = { getAll, get, save, remove, update, removeTasksBoard, AssignmentUserTasks };
+  return !!tasks.splice(index, 1).length;
+};
+
+const deleteUserFromTask = async (userId: string): Promise<boolean> => {
+  try {
+    tasks.forEach((task) => {
+      const locTask = task;
+      if (locTask.userId === userId) {
+        locTask.userId = null;
+      }
+    });
+    return true;
+  } catch (e) {
+    return false;
+  }
+};
+
+const deleteTasksFromBoard = async (boardId: string): Promise<boolean> => {
+  try {
+    tasks = tasks.filter((task) => task.boardId !== boardId);
+    return true;
+  } catch (e) {
+    return false;
+  }
+};
+
+export {
+  getAll,
+  get,
+  create,
+  update,
+  remove,
+  deleteTasksFromBoard,
+  deleteUserFromTask,
+};

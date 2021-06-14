@@ -1,67 +1,34 @@
-export {}
-const Board = require('./boards.model.ts')
-const DBTASK = require('../tasks/tasks.memory.repository.ts')
+import { IBoard } from '../../types.js';
+import { memoryDb } from '../../memoryDb/memoryDb.js';
 
-let DBBoards: typeof Board[] = []
+const { boards } = memoryDb;
 
-/**
- * Get all boards with DBBoards
- * @async
- * @returns {Promise<object>} Array of objects(board)
- */
-const getAll = async (): Promise<object> => DBBoards;
+const getAll = async (): Promise<IBoard[]> => [...boards];
 
-/**
- * Get by id board with DBBoards
- * @async
- * @param {string} id The board id
- * @returns {Promise<object>} The board
- */
-const get = async (id: string): Promise<object> => {
-  const board = await DBBoards.filter(bd => bd.id === id)[0]
-  return board!
-}
+const get = async (boardId: string): Promise<IBoard | undefined> =>
+  boards.find((board: IBoard) => board.id === boardId);
 
-/**
- * Add new board in DBBoards
- * @async
- * @param {Object} board The board object
- * @returns {Promise<object>} The new board
- */
-const save = async (board: object): Promise<object> => {
-  const newBoard = new Board(board)
-  DBBoards = [...DBBoards, newBoard]
-  return newBoard
-}
+const create = async (boardData: IBoard): Promise<IBoard | undefined> => {
+  boards.push(boardData);
+  return get(boardData.id);
+};
 
-/**
- * Update by id board with DBBoards
- * @async
- * @param {string} id The board id
- * @param {Object} boardUp The new date board
- * @returns {Promise<object>} The update board
- */
-const update = async (id: string, boardUp: object): Promise<object> => {
-  DBBoards = DBBoards.map(board => {
-    if (board.id === id) {
-      return {...board, ...boardUp};
-    }
-    return board
-  })
-  return get(id)
-}
+const update = async (
+  boardId: string,
+  boardData: IBoard
+): Promise<IBoard | null | undefined> => {
+  const index = boards.findIndex((board) => board.id === boardId);
+  if (index === -1) return null;
 
-/**
- * Remove by id board with DBBoards
- * @async
- * @param {string} id The board id
- * @returns {Promise<object>} The remove board
- */
-const remove = async (id: string): Promise<object> => {
-  const delBoard = get(id)
-  DBBoards = await DBBoards.filter(board => board.id !== id)
-  DBTASK.removeTasksBoard(id)
-  return delBoard
-}
+  boards[index] = { ...boards[index], ...boardData, id: boardId };
+  return get(boardId);
+};
 
-module.exports = { getAll, get, save, remove, update };
+const remove = async (itemId: string): Promise<boolean> => {
+  const index = boards.findIndex((item) => item.id === itemId);
+  if (index === -1) return false;
+
+  return !!boards.splice(index, 1).length;
+};
+
+export { getAll, get, create, update, remove };

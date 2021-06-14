@@ -1,24 +1,13 @@
-export {}
-declare const process : {
-  env: {
-    PORT: string
-    NODE_ENV: string
-    MONGO_CONNECTION_STRING: string
-    JWT_SECRET_KEY: string
-    AUTH_MODE: string
-  }
-}
-const dotenv = require('dotenv');
-const path = require('path');
+import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const dirname = path.dirname(fileURLToPath(import.meta.url));
 
 dotenv.config({
-  path: path.join(__dirname, '../../.env')
+  path: path.join(dirname, '../../.env'),
 });
 
-module.exports = {
-  PORT: process.env.PORT,
-  NODE_ENV: process.env.NODE_ENV,
-  MONGO_CONNECTION_STRING: process.env.MONGO_CONNECTION_STRING,
-  JWT_SECRET_KEY: process.env.JWT_SECRET_KEY,
-  AUTH_MODE: process.env.AUTH_MODE === 'true'
-};
+export const { PORT, NODE_ENV, MONGO_CONNECTION_STRING, JWT_SECRET_KEY } =
+  process.env;
+export const AUTH_MODE = process.env['AUTH_MODE'] === 'true';

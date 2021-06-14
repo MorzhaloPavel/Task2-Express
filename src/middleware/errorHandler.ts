@@ -4,10 +4,7 @@ import {IError} from '../types'
 
 const errorHandler = (err: IError, _req: express.Request, res: express.Response, next: express.NextFunction) : void => {
   logger.error(err);
-  res.status(err.status || 500).send({error: {
-    error: err.status || 500,
-    message: err.message || 'Oppss!'
-  }});
+  res.status(err.status || 500).send();
   next()
 };
 

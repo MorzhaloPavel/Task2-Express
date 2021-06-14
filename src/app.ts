@@ -5,7 +5,6 @@ import path from 'path';
 import YAML from 'yamljs';
 
 import ErrorNotFound from './utils/ErrorNotFound';
-import logger from './utils/logger'
 import loggerMiddleware from './middleware/loggerMiddleware'
 import errorHandler from './middleware/errorHandler'
 import { router as userRouter } from './resources/users/user.router';
@@ -31,20 +30,6 @@ app.use((_req, _res, next) => {
   const error = new ErrorNotFound('This request does not exist!')
   next(error)
 })
-
-process.on('uncaughtException', (error) => {
-  logger.error(`captured error: ${error.message}`)
-  setTimeout(() => {
-    process.exit(1)
-  }, 500)  
-});
-
-process.on('unhandledRejection', (reason: Error) => {
-  logger.error(`Unhandled rejection detected: ${reason.message}`)
-  setTimeout(() => {
-    process.exit(1)
-  }, 500) 
-});
 
 app.use(errorHandler)
 

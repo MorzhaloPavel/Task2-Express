@@ -1,0 +1,15 @@
+{"status":404,"name":"ErrorNotFound","level":"error","message":"undefined"}
+{"status":404,"name":"ErrorNotFound","level":"error","message":"undefined"}
+{"level":"error","message":"   TypeORM connection error:  No connection options were found in any orm configuration files.","stack":"Error: No connection options were found in any orm configuration files.\n    at ConnectionOptionsReader.<anonymous> (C:\\Users\\Home\\Desktop\\Учёба\\RS School NodeJS\\task2 Express\\Task2-Express\\src\\connection\\ConnectionOptionsReader.ts:42:19)\n    at step (C:\\Users\\Home\\Desktop\\Учёба\\RS School NodeJS\\task2 Express\\Task2-Express\\node_modules\\typeorm\\node_modules\\tslib\\tslib.js:143:27)\n    at Object.next (C:\\Users\\Home\\Desktop\\Учёба\\RS School NodeJS\\task2 Express\\Task2-Express\\node_modules\\typeorm\\node_modules\\tslib\\tslib.js:124:57)\n    at fulfilled (C:\\Users\\Home\\Desktop\\Учёба\\RS School NodeJS\\task2 Express\\Task2-Express\\node_modules\\typeorm\\node_modules\\tslib\\tslib.js:114:62)\n    at processTicksAndRejections (node:internal/process/task_queues:93:5)"}
+{"status":404,"name":"ErrorNotFound","level":"error","message":"undefined"}
+{"status":404,"name":"ErrorNotFound","level":"error","message":"undefined"}
+{"status":404,"name":"ErrorNotFound","level":"error","message":"undefined"}
+{"status":404,"name":"ErrorNotFound","level":"error","message":"undefined"}
+{"status":404,"name":"ErrorNotFound","level":"error","message":"undefined"}
+{"status":404,"name":"ErrorNotFound","level":"error","message":"undefined"}
+{"status":404,"name":"ErrorNotFound","level":"error","message":"undefined"}
+{"status":404,"name":"ErrorNotFound","level":"error","message":"undefined"}
+{"status":404,"name":"ErrorNotFound","level":"error","message":"undefined"}
+{"status":404,"name":"ErrorNotFound","level":"error","message":"undefined"}
+{"status":404,"name":"ErrorNotFound","level":"error","message":"undefined"}
+{"status":404,"name":"ErrorNotFound","level":"error","message":"undefined"}

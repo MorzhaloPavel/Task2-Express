@@ -1,6 +1,11 @@
 import {ConnectionOptions} from "typeorm";
 import dotenv from 'dotenv';
 import path from "path";
+import User from '../resources/users/user.model'
+// import Board from "../resources/boards/boards.model";
+import Colum from "../resources/boards/colum.model"
+import Task from "../resources/tasks/tasks.model"
+
 
 dotenv.config({
   path: path.join(__dirname, '../../.env'),
@@ -19,7 +24,10 @@ export default {
   synchronize: true,
   logging: false,
   entities: [
-    `src/entity/**/*.ts`
+    User,
+    // Board,
+    Colum,
+    Task
   ],
   migrations: [
     `src/migration/**/*.ts`

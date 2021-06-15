@@ -1,11 +1,16 @@
+import {Entity, PrimaryColumn, Column} from "typeorm";
 import { v4 as uuidv4 } from 'uuid';
 import { IColumn } from '../../types';
 
-export default class Column {
+@Entity({name: 'colum'})
+export default class Colum {
+  @PrimaryColumn()
   id: string;
 
+  @Column()
   title: string;
 
+  @Column()
   order: number;
 
   constructor({ id = uuidv4(), title = 'Column', order = 0 } = {} as IColumn) {

@@ -1,6 +1,6 @@
 import Express, { Router } from 'express';
 import { StatusCodes } from 'http-status-codes';
-import { Board } from './boards.model';
+import  Board  from './boards.model';
 import * as boardsService from './boards.service';
 import { errorResponse } from '../../utils/errorResponse';
 

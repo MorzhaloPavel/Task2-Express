@@ -1,12 +1,17 @@
+import {Entity, PrimaryColumn, Column} from "typeorm";
 import { v4 as uuidv4 } from 'uuid';
 import { IColumn, IBoard } from '../../types';
-import Column from './column.model';
+import Colum from './colum.model';
 
-export class Board {
+@Entity({name: 'board'})
+export default class Board {
+  @PrimaryColumn()
   id: string;
 
+  @Column()
   title: string;
 
+  @Column()
   columns: IColumn[] | null;
 
   constructor(
@@ -19,8 +24,8 @@ export class Board {
 
   static createColumns(columns: IColumn[] | null): IColumn[] {
     if (Array.isArray(columns)) {
-      return columns.map((col: IColumn) => new Column({ ...col }));
+      return columns.map((col: IColumn) => new Colum({ ...col }));
     }
-    return [new Column()];
+    return [new Colum()];
   }
 }

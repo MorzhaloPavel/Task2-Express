@@ -5,8 +5,11 @@ import User from './user.model';
 
 const getAll = async (): Promise<IUser[]> => {
   const userRepository = getManager().getRepository(User);
-  const user = userRepository.find()
-  return user
+  const users = await  userRepository.find()
+  if(!users){
+    throw new ErrorNotFound("Not Found!");
+  }
+  return users
 }
 
 const get = async (id: string): Promise<IUser> => {
@@ -20,8 +23,8 @@ const get = async (id: string): Promise<IUser> => {
   
 const create = async (user: IUser): Promise<IUser | undefined> => {
   const userRepository = getManager().getRepository(User);
-  const newUser = await userRepository.create(user)
-  await userRepository.save(newUser);
+  const userCreate = await userRepository.create(user)
+  const newUser = await userRepository.save(userCreate);
   if(!newUser){
     throw new ErrorNotFound("Not Found!");
   }
@@ -35,21 +38,20 @@ const update = async (
   const userRepository = getManager().getRepository(User);
   let user = await userRepository.findOne(id)
   user = {...user, ...userData}
-  await userRepository.save(user);
-  if(!user){
+  const userUpdate = await userRepository.save(user);
+  if(!userUpdate){
     throw new ErrorNotFound("Not Found!");
   }
-  return user;
+  return userUpdate;
 };
 
 const remove = async (userId: string): Promise<boolean> => {
   const userRepository = getManager().getRepository(User);
-  const user = await userRepository.findOne(userId)
-  await userRepository.delete(userId)
-  if(!user){
+  const userRemove = await userRepository.delete(userId)
+  if(!userRemove){
     throw new ErrorNotFound("Not Found!");
   }
-  return !!user
+  return !!userRemove
 };
 
 export { getAll, get, create, update, remove };

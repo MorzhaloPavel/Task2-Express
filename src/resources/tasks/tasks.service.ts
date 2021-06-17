@@ -6,14 +6,10 @@ const getAll = (boardId: string): Promise<ITask[]> => taskRepo.getAll(boardId);
 const get = (boardId: string, taskId: string): Promise<ITask> =>
   taskRepo.get(boardId, taskId);
 
-const create = (taskData: ITask): Promise<ITask | undefined> =>
-  taskRepo.create(taskData);
+const create = (task: ITask, boardId: string): Promise<ITask | undefined> =>
+  taskRepo.create(task, boardId);
 
-const update = (
-  boardId: string,
-  taskId: string,
-  taskData: ITask
-): Promise<ITask | null | undefined> =>
+const update = (boardId: string, taskId: string, taskData: ITask): Promise<ITask | null | undefined> =>
   taskRepo.update(boardId, taskId, taskData);
 
 const remove = (boardId: string, taskId: string): Promise<boolean> =>

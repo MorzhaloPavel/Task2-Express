@@ -32,8 +32,8 @@ export default {
   migrations: [
     `src/migration/**/*.ts`
   ],
-  cli: {
-    "entitiesDir": "src/entity",
-    "migrationsDir": "src/migration",
-  },
+  // cli: {
+  //   "entitiesDir": "src/entity",
+  //   "migrationsDir": "src/migration",
+  // },
 } as ConnectionOptions;

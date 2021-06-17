@@ -2,7 +2,7 @@ import {Entity, PrimaryColumn, Column} from "typeorm";
 import { v4 as uuidv4 } from 'uuid';
 import { ITask } from '../../types';
 
-@Entity({name: 'task'})
+@Entity({name: 'tasks'})
 export default class Task {
   @PrimaryColumn()
   id: string;
@@ -16,13 +16,13 @@ export default class Task {
   @Column()
   description: string;
 
-  @Column()
+  @Column({nullable: true})
   userId: string | null;
 
   @Column()
   boardId: string | null;
 
-  @Column()
+  @Column({nullable: true})
   columnId: string | null;
 
   constructor(
@@ -31,9 +31,9 @@ export default class Task {
       title = 'Task',
       description = 'Description',
       order = 0,
-      userId = null,
-      boardId = null,
-      columnId = null,
+      userId = '',
+      boardId = '',
+      columnId = '',
     } = {} as ITask
   ) {
     this.id = id;
@@ -43,5 +43,10 @@ export default class Task {
     this.userId = userId;
     this.boardId = boardId;
     this.columnId = columnId;
+  }
+
+  static toResponse(task: Task) {
+    const { id, title, order, description, userId, boardId, columnId } = task;
+    return { id, title, order, description, userId, boardId, columnId };
   }
 }

@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from 'uuid';
 import {Entity, PrimaryColumn, Column} from "typeorm";
 import { IUser } from '../../types';
 
-@Entity({name: 'user'})
+@Entity({name: 'users'})
 export default class User {
   @PrimaryColumn()
   id: string;
@@ -15,6 +15,7 @@ export default class User {
 
   @Column()
   password: string | undefined;
+  
 
   constructor({ id = uuidv4(), login, name, password } = {} as IUser) {
     this.id = id;

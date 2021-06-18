@@ -19,7 +19,7 @@ export default class Task {
   @Column({nullable: true})
   userId: string | null;
 
-  @Column()
+  @Column({nullable: true})
   boardId: string | null;
 
   @Column({nullable: true})
@@ -31,9 +31,9 @@ export default class Task {
       title = 'Task',
       description = 'Description',
       order = 0,
-      userId = '',
-      boardId = '',
-      columnId = '',
+      userId = null,
+      boardId = null,
+      columnId = null,
     } = {} as ITask
   ) {
     this.id = id;

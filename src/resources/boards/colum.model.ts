@@ -1,11 +1,10 @@
 import {Entity, PrimaryColumn, Column, } from "typeorm";
 import { v4 as uuidv4 } from 'uuid';
 import { IColumn } from '../../types';
-// import Board from "./boards.model";
 
-@Entity({name: 'colum'})
+@Entity({name: 'columns'})
 export default class Colum {
-  @PrimaryColumn()
+  @PrimaryColumn('uuid')
   id: string;
 
   @Column()
@@ -13,9 +12,6 @@ export default class Colum {
 
   @Column()
   order: number;
-
-  // @ManyToOne(() => Board, board => board.columns)
-  //   board: Board;
 
   constructor({ id = uuidv4(), title = 'Column', order = 0 } = {} as IColumn) {
     this.id = id;

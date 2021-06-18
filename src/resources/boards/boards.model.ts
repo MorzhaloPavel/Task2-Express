@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { IColumn, IBoard } from '../../types';
 import Colum from './colum.model';
 
-@Entity({name: 'board'})
+@Entity({name: 'boards'})
 export default class Board {
   @PrimaryColumn()
   id: string;
@@ -11,10 +11,7 @@ export default class Board {
   @Column()
   title: string;
 
-  // @OneToMany(() => Colum, column => column.)
-  // columns: Colum[];
-
-  @Column()
+  @Column('text', { array: true})
   columns: IColumn[] | null;
 
   constructor(

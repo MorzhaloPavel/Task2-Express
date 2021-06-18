@@ -27,8 +27,8 @@ router.route('/').post(async (req: Express.Request, res: Express.Response, next:
 router
   .route('/:taskId')
   .put(async (req: Express.Request, res: Express.Response, next: Express.NextFunction) => {
-    await tasksService.update(req.params["boardId"], req.params["taskId"], req.body).then(user => 
-      res.status(200).json(Task.toResponse((user as Task)))
+    await tasksService.update(req.params["boardId"], req.params["taskId"], req.body).then(task => 
+      res.status(200).json(Task.toResponse((task as Task)))
     ).catch(next)
   });
 

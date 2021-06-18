@@ -2,7 +2,7 @@ import {ConnectionOptions} from "typeorm";
 import dotenv from 'dotenv';
 import path from "path";
 import User from '../resources/users/user.model'
-// import Board from "../resources/boards/boards.model";
+import Board from "../resources/boards/boards.model";
 import Colum from "../resources/boards/colum.model"
 import Task from "../resources/tasks/tasks.model"
 
@@ -25,7 +25,7 @@ export default {
   logging: false,
   entities: [
     User,
-    // Board,
+    Board,
     Colum,
     Task
   ],

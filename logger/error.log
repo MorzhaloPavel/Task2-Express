@@ -1,13 +1,15 @@
-{"message":"   неверный синтаксис для типа integer: \"{\"id\":\"e9d1e43c-a121-4a0b-8eef-416c24f39a81\",\"title\":\"Column\",\"order\":0}\"","level":"error"}
-{"name":"DataTypeNotSupportedError","message":"   Data type \"Array\" in \"Board.columns\" is not supported by \"postgres\" database.","level":"error"}
-{"message":"   неверный синтаксис для типа integer: \"{\"title\":\"Backlog\",\"order\":1}\"","level":"error"}
-{"message":"   неверный синтаксис для типа integer: \"{\"title\":\"Backlog\",\"order\":1}\"","level":"error"}
-{"message":"   неверный синтаксис для типа integer: \"{\"title\":\"Backlog\",\"order\":1}\"","level":"error"}
-{"message":"   неверный синтаксис для типа integer: \"{\"title\":\"Backlog\",\"order\":1}\"","level":"error"}
-{"message":"   значение NULL в столбце \"id\" отношения \"boards\" нарушает ограничение NOT NULL","level":"error"}
-{"message":"   неверный синтаксис для типа integer: \"{\"title\":\"Backlog\",\"order\":1}\"","level":"error"}
-{"message":"   неверный синтаксис для типа integer: \"{\"title\":\"Backlog\",\"order\":1}\"","level":"error"}
-{"message":"   неверный синтаксис для типа integer: \"{\"title\":\"Backlog\",\"order\":1}\"","level":"error"}
+
+{"message":"   столбец \"id\" отношения \"boards\" содержит значения NULL","length":241,"name":"QueryFailedError","severity":"ОШИБКА","code":"23502","schema":"public","table":"boards","column":"id","file":"d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\commands\\tablecmds.c","line":"5452","routine":"ATRewriteTable","query":"ALTER TABLE \"boards\" ADD \"id\" uuid NOT NULL","parameters":[],"level":"error"}
+{"message":"   столбец \"id\" отношения \"boards\" содержит значения NULL","length":241,"name":"QueryFailedError","severity":"ОШИБКА","code":"23502","schema":"public","table":"boards","column":"id","file":"d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\commands\\tablecmds.c","line":"5452","routine":"ATRewriteTable","query":"ALTER TABLE \"boards\" ADD \"id\" uuid NOT NULL","parameters":[],"level":"error"}
+{"message":"   столбец \"id\" отношения \"boards\" содержит значения NULL","length":241,"name":"QueryFailedError","severity":"ОШИБКА","code":"23502","schema":"public","table":"boards","column":"id","file":"d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\commands\\tablecmds.c","line":"5452","routine":"ATRewriteTable","query":"ALTER TABLE \"boards\" ADD \"id\" uuid NOT NULL","parameters":[],"level":"error"}
+{"message":"   столбец \"id\" отношения \"boards\" содержит значения NULL","length":241,"name":"QueryFailedError","severity":"ОШИБКА","code":"23502","schema":"public","table":"boards","column":"id","file":"d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\commands\\tablecmds.c","line":"5452","routine":"ATRewriteTable","query":"ALTER TABLE \"boards\" ADD \"id\" uuid NOT NULL","parameters":[],"level":"error"}
+{"message":"   столбец \"id\" отношения \"boards\" содержит значения NULL","length":241,"name":"QueryFailedError","severity":"ОШИБКА","code":"23502","schema":"public","table":"boards","column":"id","file":"d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\commands\\tablecmds.c","line":"5452","routine":"ATRewriteTable","query":"ALTER TABLE \"boards\" ADD \"id\" uuid NOT NULL","parameters":[],"level":"error"}
+{"message":"   столбец \"id\" отношения \"boards\" содержит значения NULL","length":241,"name":"QueryFailedError","severity":"ОШИБКА","code":"23502","schema":"public","table":"boards","column":"id","file":"d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\commands\\tablecmds.c","line":"5452","routine":"ATRewriteTable","query":"ALTER TABLE \"boards\" ADD \"id\" uuid NOT NULL","parameters":[],"level":"error"}
+{"message":"   столбец \"id\" отношения \"boards\" содержит значения NULL","length":241,"name":"QueryFailedError","severity":"ОШИБКА","code":"23502","schema":"public","table":"boards","column":"id","file":"d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\commands\\tablecmds.c","line":"5452","routine":"ATRewriteTable","query":"ALTER TABLE \"boards\" ADD \"id\" uuid NOT NULL","parameters":[],"level":"error"}
+{"message":"   This request does not exist!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   This request does not exist!","level":"error"}
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
@@ -15,6 +17,7 @@
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
+{"message":"   This request does not exist!","level":"error"}
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
@@ -22,34 +25,7 @@
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
-{"message":"   Not Found!","level":"error"}
-{"name":"DataTypeNotSupportedError","message":"   Data type \"Array\" in \"Board.columns\" is not supported by \"postgres\" database.","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
+{"message":"   This request does not exist!","level":"error"}
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
@@ -57,6 +33,10 @@
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
+{"message":"   No repository for \"Columns\" was found. Looks like this entity is not registered in current \"default\" connection?","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   неверный синтаксис для типа uuid: \"undefined\"","level":"error"}
+{"message":"   This request does not exist!","level":"error"}
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
@@ -64,33 +44,7 @@
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
-{"message":"   столбец \"columns\" отношения \"boards\" содержит значения NULL","length":251,"name":"QueryFailedError","severity":"ОШИБКА","code":"23502","schema":"public","table":"boards","column":"columns","file":"d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\commands\\tablecmds.c","line":"5452","routine":"ATRewriteTable","query":"ALTER TABLE \"boards\" ADD \"columns\" text NOT NULL","parameters":[],"level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
-{"message":"   Cannot read property 'connect' of undefined","level":"error"}
+{"message":"   This request does not exist!","level":"error"}
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
@@ -98,10 +52,7 @@
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
-{"message":"   значение NULL в столбце \"name\" отношения \"users\" нарушает ограничение NOT NULL","level":"error"}
-{"message":"   значение NULL в столбце \"name\" отношения \"users\" нарушает ограничение NOT NULL","level":"error"}
-{"message":"   значение NULL в столбце \"name\" отношения \"users\" нарушает ограничение NOT NULL","level":"error"}
-{"message":"   столбец \"columns\" отношения \"boards\" содержит значения NULL","length":251,"name":"QueryFailedError","severity":"ОШИБКА","code":"23502","schema":"public","table":"boards","column":"columns","file":"d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\commands\\tablecmds.c","line":"5452","routine":"ATRewriteTable","query":"ALTER TABLE \"boards\" ADD \"columns\" integer array NOT NULL","parameters":[],"level":"error"}
+{"message":"   This request does not exist!","level":"error"}
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
@@ -109,7 +60,7 @@
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
-{"message":"   столбец \"columns\" отношения \"boards\" содержит значения NULL","length":251,"name":"QueryFailedError","severity":"ОШИБКА","code":"23502","schema":"public","table":"boards","column":"columns","file":"d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\commands\\tablecmds.c","line":"5452","routine":"ATRewriteTable","query":"ALTER TABLE \"boards\" ADD \"columns\" json array NOT NULL","parameters":[],"level":"error"}
+{"message":"   This request does not exist!","level":"error"}
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
@@ -117,4 +68,45 @@
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
 {"message":"   Not Found!","level":"error"}
-{"message":"   столбец \"columns\" отношения \"boards\" содержит значения NULL","length":251,"name":"QueryFailedError","severity":"ОШИБКА","code":"23502","schema":"public","table":"boards","column":"columns","file":"d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\commands\\tablecmds.c","line":"5452","routine":"ATRewriteTable","query":"ALTER TABLE \"boards\" ADD \"columns\" money array NOT NULL","parameters":[],"level":"error"}
+{"message":"   This request does not exist!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   This request does not exist!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   This request does not exist!","level":"error"}
+{"message":"   неверный синтаксис для типа uuid: \"undefined\"","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   неверный синтаксис для типа uuid: \"undefined\"","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   неверный синтаксис для типа uuid: \"undefined\"","level":"error"}
+{"message":"   This request does not exist!","level":"error"}
+{"message":"   неверный синтаксис для типа uuid: \"undefined\"","level":"error"}
+{"message":"   неверный синтаксис для типа uuid: \"undefined\"","level":"error"}
+{"message":"   неверный синтаксис для типа uuid: \"undefined\"","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   неверный синтаксис для типа uuid: \"undefined\"","level":"error"}
+{"message":"   This request does not exist!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}

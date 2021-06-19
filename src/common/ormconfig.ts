@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import path from "path";
 import User from '../resources/users/user.model'
 import Board from "../resources/boards/boards.model";
-import Colum from "../resources/boards/colum.model"
+import Columns from "../resources/boards/columns.model"
 import Task from "../resources/tasks/tasks.model"
 
 
@@ -21,19 +21,19 @@ export default {
   username: POSTGRES_USER || "postgres",
   password: POSTGRES_PASSWORD || "postgres",
   database: POSTGRES_DB || "node_project",
+  // migrationsTableName: "custom_migration_table",
   synchronize: true,
   logging: false,
   entities: [
     User,
     Board,
-    Colum,
+    Columns,
     Task
   ],
-  migrations: [
-    `src/migration/**/*.ts`
-  ],
+  // migrations: [
+  //   `src/migration/*.ts`
+  // ],
   // cli: {
-  //   "entitiesDir": "src/entity",
   //   "migrationsDir": "src/migration",
   // },
 } as ConnectionOptions;

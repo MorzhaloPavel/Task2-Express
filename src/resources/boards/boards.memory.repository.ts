@@ -2,6 +2,7 @@ import {getManager} from "typeorm";
 import { IBoard } from '../../types';
 import ErrorNotFound from '../../utils/ErrorNotFound';
 import Board from "./boards.model";
+import Columns from "./columns.model";
 
 const getAll = async (): Promise<IBoard[]> => {
   const boardRepository = getManager().getRepository(Board);
@@ -15,6 +16,8 @@ const getAll = async (): Promise<IBoard[]> => {
 const get = async (boardId: string): Promise<IBoard | undefined> => {
   const boardRepository = getManager().getRepository(Board);
   const board = await boardRepository.findOne(boardId)
+  console.log('333333', board);
+  
   if(!board){
     throw new ErrorNotFound("Not Found!");
   }
@@ -22,28 +25,36 @@ const get = async (boardId: string): Promise<IBoard | undefined> => {
 }
 
 const create = async (boardData: IBoard): Promise<IBoard | undefined> => {
+  const columnRepository = getManager().getRepository(Columns);
   const boardRepository = getManager().getRepository(Board);
   const boardCreate = await boardRepository.create(boardData)
+  const columnsCreate = await columnRepository.create(boardData.columns)
+  console.log('1111111', columnsCreate );
+  
   const newBoard = await boardRepository.save(boardCreate);
+  // console.log('22222222', newBoard );
+
+  await boardRepository.save(columnsCreate);
+
   if(!newBoard){
     throw new ErrorNotFound("Not Found!");
   }
   return newBoard
 };
 
-const update = async (
-  boardId: string,
-  boardData: IBoard
-): Promise<IBoard | null | undefined> => {
-  const boardRepository = getManager().getRepository(Board);
-  let board = await boardRepository.findOne(boardId)
-  board = {...board, ...boardData}
-  const boardUpdate = await boardRepository.save(board);
-  if(!boardUpdate){
-    throw new ErrorNotFound("Not Found!");
-  }
-  return boardUpdate;
-};
+// const update = async (
+//   boardId: string,
+//   boardData: IBoard
+// ): Promise<IBoard | null | undefined> => {
+//   const boardRepository = getManager().getRepository(Board);
+//   let board = await boardRepository.findOne(boardId)
+//   board = {...board, ...boardData}
+//   const boardUpdate = await boardRepository.save(board);
+//   if(!boardUpdate){
+//     throw new ErrorNotFound("Not Found!");
+//   }
+//   return boardUpdate;
+// };
 
 const remove = async (itemId: string): Promise<boolean> => {
   const boardRepository = getManager().getRepository(Board);
@@ -54,4 +65,9 @@ const remove = async (itemId: string): Promise<boolean> => {
   return !!boardRemove
 };
 
-export { getAll, get, create, update, remove };
+export { 
+  getAll, 
+  get, 
+  create, 
+  // update, 
+  remove };

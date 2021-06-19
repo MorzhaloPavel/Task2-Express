@@ -11,10 +11,15 @@ const get = (id: string): Promise<IBoard | undefined> =>
 const create = (board: IBoard): Promise<IBoard | undefined> =>
   boardRepo.create(board);
 
-const update = (id: string, board: IBoard): Promise<IBoard | null | undefined> => 
-  boardRepo.update(id, board);
+// const update = (id: string, board: IBoard): Promise<IBoard | null | undefined> => 
+//   boardRepo.update(id, board);
 
 const remove = (id: string): Promise<[boolean, boolean]> =>
   Promise.all([tasksService.deleteAllTasksFromBoard(id), boardRepo.remove(id)]);
 
-export { getAll, get, create, update, remove };
+export { 
+  getAll, 
+  get, 
+  create, 
+  // update, 
+  remove };

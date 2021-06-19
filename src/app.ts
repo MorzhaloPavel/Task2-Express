@@ -17,7 +17,10 @@ const swaggerDocument = YAML.load(path.join(__dirname, '../doc/api.yaml'));
 
 createConnection(ORMconfig).then(async () => {
   process.stdout.write('Connected to Database\n');
-}).catch(error => logger.error(error));
+}).catch(error => {
+  process.stdout.write('Error connection to Database\n');
+  logger.error(error)
+});
 
 app.use(express.json());
 app.use('/doc', swaggerUI.serve, swaggerUI.setup(swaggerDocument));

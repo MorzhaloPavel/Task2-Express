@@ -23,13 +23,13 @@ router.route('/').post(async (req: Express.Request, res: Express.Response, next:
   ).catch(next)
 });
 
-// router
-//   .route('/:id')
-//   .put(async (req: Express.Request, res: Express.Response, next: Express.NextFunction) => {
-//     await boardsService.update(req.params["id"], req.body).then(board => 
-//       res.status(200).json(board)
-//     ).catch(next)
-//   });
+router
+  .route('/:id')
+  .put(async (req: Express.Request, res: Express.Response, next: Express.NextFunction) => {
+    await boardsService.update(req.params["id"], req.body).then(board => 
+      res.status(200).json(board)
+    ).catch(next)
+  });
 
 router
   .route('/:id')

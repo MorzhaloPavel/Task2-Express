@@ -1,10 +1,10 @@
-import {Entity, PrimaryColumn, Column, ManyToOne,  } from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column, ManyToOne,  } from "typeorm";
 import Board from "./boards.model";
 
 @Entity({name: 'columns'})
 export default class Columns {
-  @PrimaryColumn('uuid')
-  id: string;
+  @PrimaryGeneratedColumn('uuid')
+  id!: string;
 
   @Column()
   title: string;
@@ -12,6 +12,6 @@ export default class Columns {
   @Column()
   order: number;
 
-  @ManyToOne(() => Board, board => board.columns)
+  @ManyToOne(() => Board, board => board.columns, {onDelete: 'CASCADE'})
     board: Board;
 }

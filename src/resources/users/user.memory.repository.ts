@@ -1,7 +1,7 @@
 import {getManager} from "typeorm";
 import { IUser } from '../../types';
 import ErrorNotFound from '../../utils/ErrorNotFound';
-import User from './user.model';
+import User from '../../entity/user';
 
 const getAll = async (): Promise<IUser[]> => {
   const userRepository = getManager().getRepository(User);

@@ -1,5 +1,5 @@
 import Express, { Router } from 'express';
-import User from './user.model';
+import User from '../../entity/user';
 import * as usersService from './user.service';
 
 const router: Express.Router = Router();

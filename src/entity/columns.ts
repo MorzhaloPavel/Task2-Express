@@ -1,5 +1,5 @@
 import {Entity, PrimaryGeneratedColumn, Column, ManyToOne,  } from "typeorm";
-import Board from "./boards.model";
+import Board from "./boards";
 
 @Entity({name: 'columns'})
 export default class Columns {

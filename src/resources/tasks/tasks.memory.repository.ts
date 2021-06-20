@@ -1,7 +1,7 @@
 import {getManager} from "typeorm";
 import { ITask } from '../../types';
 import ErrorNotFound from '../../utils/ErrorNotFound';
-import Task from './tasks.model'
+import Task from '../../entity/tasks'
 
 const getAll = async (board: string): Promise<ITask[]> =>{
   const taskRepository = getManager().getRepository(Task);

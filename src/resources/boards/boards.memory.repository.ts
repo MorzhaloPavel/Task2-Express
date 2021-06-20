@@ -1,8 +1,8 @@
 import {getManager} from "typeorm";
 import { IBoard } from '../../types';
 import ErrorNotFound from '../../utils/ErrorNotFound';
-import Board from "./boards.model";
-import Columns from "./columns.model";
+import Board from "../../entity/boards";
+import Columns from "../../entity/columns";
 
 const getAll = async (): Promise<IBoard[]> => {
   const boardRepository = getManager().getRepository(Board);

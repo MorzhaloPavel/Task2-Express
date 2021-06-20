@@ -1,7 +1,7 @@
 import { IBoard } from '../../types';
 import * as boardRepo from './boards.memory.repository';
 import * as tasksService from '../tasks/tasks.service';
-import Board from "./boards.model";
+import Board from "../../entity/boards";
 
 
 const getAll = (): Promise<IBoard[]> => 

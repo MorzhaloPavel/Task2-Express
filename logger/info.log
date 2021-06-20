@@ -1,0 +1,286 @@
+{"message":"   отношение \"columns\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 500, [173ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: GET, URL: /boards, query parameters: {}, request body: {}, 500, [9ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: GET, URL: /boards, query parameters: {}, request body: {}, 500, [2ms]","level":"info"}
+{"message":"   отношение \"columns\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 500, [4ms]","level":"info"}
+{"message":"   отношение \"columns\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: PUT, URL: /boards/undefined, query parameters: {}, request body: {\"title\":\"Autotest updated board\"}, 500, [4ms]","level":"info"}
+{"message":"   отношение \"columns\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"columns\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: DELETE, URL: /boards/undefined, query parameters: {}, request body: {}, 500, [7ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: GET, URL: /users, query parameters: {}, request body: {}, 500, [4ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: POST, URL: /users, query parameters: {}, request body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 500, [5ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: POST, URL: /users, query parameters: {}, request body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: POST, URL: /users, query parameters: {}, request body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 500, [4ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: PUT, URL: /users/undefined, query parameters: {}, request body: {\"name\":\"Autotest updated TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 500, [2ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: POST, URL: /users, query parameters: {}, request body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: DELETE, URL: /users/undefined, query parameters: {}, request body: {}, 500, [4ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: POST, URL: /users, query parameters: {}, request body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 500, [4ms]","level":"info"}
+{"message":"   отношение \"columns\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards/undefined/tasks, query parameters: {}, request body: {\"title\":\"Autotest task\",\"order\":0,\"description\":\"Lorem ipsum\",\"userId\":null,\"boardId\":null,\"columnId\":null}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: GET, URL: /boards/undefined/tasks, query parameters: {}, request body: {}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: GET, URL: /boards/undefined/tasks, query parameters: {}, request body: {}, 500, [2ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards/undefined/tasks, query parameters: {}, request body: {\"title\":\"Autotest task\",\"order\":0,\"description\":\"Lorem ipsum\",\"userId\":null,\"boardId\":null,\"columnId\":null}, 500, [4ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards/undefined/tasks, query parameters: {}, request body: {\"title\":\"Autotest task\",\"order\":0,\"description\":\"Lorem ipsum\",\"userId\":null,\"boardId\":null,\"columnId\":null}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: PUT, URL: /boards/undefined/tasks/undefined, query parameters: {}, request body: {\"title\":\"Autotest updated task\"}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: GET, URL: /boards/undefined/tasks/undefined, query parameters: {}, request body: {}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: DELETE, URL: /boards/undefined, query parameters: {}, request body: {}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 500, [183ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: GET, URL: /boards, query parameters: {}, request body: {}, 500, [8ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: GET, URL: /boards, query parameters: {}, request body: {}, 500, [4ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 500, [7ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 500, [8ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: PUT, URL: /boards/undefined, query parameters: {}, request body: {\"title\":\"Autotest updated board\"}, 500, [5ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 500, [9ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 500, [7ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: DELETE, URL: /boards/undefined, query parameters: {}, request body: {}, 500, [6ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: GET, URL: /users, query parameters: {}, request body: {}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: POST, URL: /users, query parameters: {}, request body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 500, [4ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: POST, URL: /users, query parameters: {}, request body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: POST, URL: /users, query parameters: {}, request body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: PUT, URL: /users/undefined, query parameters: {}, request body: {\"name\":\"Autotest updated TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 500, [2ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: POST, URL: /users, query parameters: {}, request body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 500, [2ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: DELETE, URL: /users/undefined, query parameters: {}, request body: {}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: POST, URL: /users, query parameters: {}, request body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 500, [8ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards/undefined/tasks, query parameters: {}, request body: {\"title\":\"Autotest task\",\"order\":0,\"description\":\"Lorem ipsum\",\"userId\":null,\"boardId\":null,\"columnId\":null}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: GET, URL: /boards/undefined/tasks, query parameters: {}, request body: {}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: GET, URL: /boards/undefined/tasks, query parameters: {}, request body: {}, 500, [2ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards/undefined/tasks, query parameters: {}, request body: {\"title\":\"Autotest task\",\"order\":0,\"description\":\"Lorem ipsum\",\"userId\":null,\"boardId\":null,\"columnId\":null}, 500, [4ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards/undefined/tasks, query parameters: {}, request body: {\"title\":\"Autotest task\",\"order\":0,\"description\":\"Lorem ipsum\",\"userId\":null,\"boardId\":null,\"columnId\":null}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: PUT, URL: /boards/undefined/tasks/undefined, query parameters: {}, request body: {\"title\":\"Autotest updated task\"}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: GET, URL: /boards/undefined/tasks/undefined, query parameters: {}, request body: {}, 500, [2ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: DELETE, URL: /boards/undefined, query parameters: {}, request body: {}, 500, [2ms]","level":"info"}
+{"message":"   отношение \"columns\" уже существует","length":195,"name":"QueryFailedError","severity":"ОШИБКА","code":"42P07","file":"d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\catalog\\heap.c","line":"1164","routine":"heap_create_with_catalog","query":"CREATE TABLE \"columns\" (\"id\" uuid NOT NULL DEFAULT uuid_generate_v4(),\n\t\t\t\t\"title\" character varying(100) NOT NULL,\n\t\t\t\t\"order\" integer NOT NULL,\n\t\t\t\t\"boardId\" uuid,\n\t\t\t\tCONSTRAINT \"PK_4ac339ccbbfed1dcd96812abbd5\" PRIMARY KEY (\"id\"))","parameters":[],"level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 500, [185ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: GET, URL: /boards, query parameters: {}, request body: {}, 500, [7ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: GET, URL: /boards, query parameters: {}, request body: {}, 500, [4ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 500, [8ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 500, [8ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: PUT, URL: /boards/undefined, query parameters: {}, request body: {\"title\":\"Autotest updated board\"}, 500, [5ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 500, [7ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 500, [7ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: DELETE, URL: /boards/undefined, query parameters: {}, request body: {}, 500, [6ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: GET, URL: /users, query parameters: {}, request body: {}, 500, [4ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: POST, URL: /users, query parameters: {}, request body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 500, [4ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: POST, URL: /users, query parameters: {}, request body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 500, [2ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: POST, URL: /users, query parameters: {}, request body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 500, [2ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: PUT, URL: /users/undefined, query parameters: {}, request body: {\"name\":\"Autotest updated TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: POST, URL: /users, query parameters: {}, request body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: DELETE, URL: /users/undefined, query parameters: {}, request body: {}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: POST, URL: /users, query parameters: {}, request body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 500, [2ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 500, [9ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards/undefined/tasks, query parameters: {}, request body: {\"title\":\"Autotest task\",\"order\":0,\"description\":\"Lorem ipsum\",\"userId\":null,\"boardId\":null,\"columnId\":null}, 500, [4ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: GET, URL: /boards/undefined/tasks, query parameters: {}, request body: {}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: GET, URL: /boards/undefined/tasks, query parameters: {}, request body: {}, 500, [2ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards/undefined/tasks, query parameters: {}, request body: {\"title\":\"Autotest task\",\"order\":0,\"description\":\"Lorem ipsum\",\"userId\":null,\"boardId\":null,\"columnId\":null}, 500, [2ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards/undefined/tasks, query parameters: {}, request body: {\"title\":\"Autotest task\",\"order\":0,\"description\":\"Lorem ipsum\",\"userId\":null,\"boardId\":null,\"columnId\":null}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: PUT, URL: /boards/undefined/tasks/undefined, query parameters: {}, request body: {\"title\":\"Autotest updated task\"}, 500, [2ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: GET, URL: /boards/undefined/tasks/undefined, query parameters: {}, request body: {}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: DELETE, URL: /boards/undefined, query parameters: {}, request body: {}, 500, [4ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 500, [182ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: GET, URL: /boards, query parameters: {}, request body: {}, 500, [7ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: GET, URL: /boards, query parameters: {}, request body: {}, 500, [4ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 500, [8ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 500, [7ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: PUT, URL: /boards/undefined, query parameters: {}, request body: {\"title\":\"Autotest updated board\"}, 500, [4ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 500, [8ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 500, [7ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: DELETE, URL: /boards/undefined, query parameters: {}, request body: {}, 500, [5ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: GET, URL: /users, query parameters: {}, request body: {}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: POST, URL: /users, query parameters: {}, request body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 500, [4ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: POST, URL: /users, query parameters: {}, request body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: POST, URL: /users, query parameters: {}, request body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 500, [2ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: PUT, URL: /users/undefined, query parameters: {}, request body: {\"name\":\"Autotest updated TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: POST, URL: /users, query parameters: {}, request body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: DELETE, URL: /users/undefined, query parameters: {}, request body: {}, 500, [4ms]","level":"info"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"    method: POST, URL: /users, query parameters: {}, request body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 500, [8ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards/undefined/tasks, query parameters: {}, request body: {\"title\":\"Autotest task\",\"order\":0,\"description\":\"Lorem ipsum\",\"userId\":null,\"boardId\":null,\"columnId\":null}, 500, [4ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: GET, URL: /boards/undefined/tasks, query parameters: {}, request body: {}, 500, [2ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: GET, URL: /boards/undefined/tasks, query parameters: {}, request body: {}, 500, [2ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards/undefined/tasks, query parameters: {}, request body: {\"title\":\"Autotest task\",\"order\":0,\"description\":\"Lorem ipsum\",\"userId\":null,\"boardId\":null,\"columnId\":null}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: POST, URL: /boards/undefined/tasks, query parameters: {}, request body: {\"title\":\"Autotest task\",\"order\":0,\"description\":\"Lorem ipsum\",\"userId\":null,\"boardId\":null,\"columnId\":null}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: PUT, URL: /boards/undefined/tasks/undefined, query parameters: {}, request body: {\"title\":\"Autotest updated task\"}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: GET, URL: /boards/undefined/tasks/undefined, query parameters: {}, request body: {}, 500, [3ms]","level":"info"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"    method: DELETE, URL: /boards/undefined, query parameters: {}, request body: {}, 500, [3ms]","level":"info"}
+{"message":"   столбец \"title\" отношения \"columns\" содержит значения NULL","length":249,"name":"QueryFailedError","severity":"ОШИБКА","code":"23502","schema":"public","table":"columns","column":"title","file":"d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\commands\\tablecmds.c","line":"5452","routine":"ATRewriteTable","query":"ALTER TABLE \"columns\" ADD \"title\" character varying NOT NULL","parameters":[],"level":"error"}
+{"message":"   столбец \"title\" отношения \"columns\" содержит значения NULL","length":249,"name":"QueryFailedError","severity":"ОШИБКА","code":"23502","schema":"public","table":"columns","column":"title","file":"d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\commands\\tablecmds.c","line":"5452","routine":"ATRewriteTable","query":"ALTER TABLE \"columns\" ADD \"title\" character varying NOT NULL","parameters":[],"level":"error"}
+{"message":"   отношение \"columns\" не существует","length":197,"name":"QueryFailedError","severity":"ОШИБКА","code":"42P01","file":"d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\catalog\\namespace.c","line":"434","routine":"RangeVarGetRelidExtended","query":"ALTER TABLE \"columns\" DROP CONSTRAINT \"FK_ac92bfd7ba33174aabef610f361\"","parameters":[],"level":"error"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 201, [186ms]","level":"info"}
+{"message":"    method: GET, URL: /boards, query parameters: {}, request body: {}, 200, [10ms]","level":"info"}
+{"message":"    method: GET, URL: /boards, query parameters: {}, request body: {}, 200, [11ms]","level":"info"}
+{"message":"    method: GET, URL: /boards/a4dfd83e-3f44-42ba-ad55-d266d41a78b2, query parameters: {}, request body: {}, 200, [6ms]","level":"info"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 201, [16ms]","level":"info"}
+{"message":"    method: DELETE, URL: /boards/7c7e5ed2-ee09-4bd3-ab6c-a6a377a94afb, query parameters: {}, request body: {}, 200, [108ms]","level":"info"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 201, [17ms]","level":"info"}
+{"message":"    method: PUT, URL: /boards/f87f0b4c-a697-4649-9c32-24540783bcb3, query parameters: {}, request body: {\"title\":\"Autotest updated board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1,\"id\":\"1a7bcfa2-1333-41ff-a2be-3912e64b086f\"},{\"title\":\"Sprint\",\"order\":2,\"id\":\"13abcbcf-2a65-459e-8760-a766b6aec461\"}],\"id\":\"f87f0b4c-a697-4649-9c32-24540783bcb3\"}, 200, [19ms]","level":"info"}
+{"message":"    method: GET, URL: /boards/f87f0b4c-a697-4649-9c32-24540783bcb3, query parameters: {}, request body: {}, 200, [3ms]","level":"info"}
+{"message":"    method: DELETE, URL: /boards/f87f0b4c-a697-4649-9c32-24540783bcb3, query parameters: {}, request body: {}, 200, [3ms]","level":"info"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 201, [9ms]","level":"info"}
+{"message":"    method: DELETE, URL: /boards/1af7ed07-c742-4f7c-b5cb-ea1f16f96e77, query parameters: {}, request body: {}, 200, [3ms]","level":"info"}
+{"message":"   Not Found!","level":"error"}
+{"message":"    method: GET, URL: /boards/1af7ed07-c742-4f7c-b5cb-ea1f16f96e77, query parameters: {}, request body: {}, 404, [4ms]","level":"info"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 201, [9ms]","level":"info"}
+{"message":"    method: POST, URL: /boards/335e88e1-e74a-4dc5-8be7-7da34b021439/tasks, query parameters: {}, request body: {\"title\":\"Task #1\",\"order\":1,\"description\":\"Lorem ipsum\",\"boardId\":\"335e88e1-e74a-4dc5-8be7-7da34b021439\",\"userId\":null,\"columnId\":null}, 201, [16ms]","level":"info"}
+{"message":"    method: POST, URL: /boards/335e88e1-e74a-4dc5-8be7-7da34b021439/tasks, query parameters: {}, request body: {\"title\":\"Task #2\",\"order\":2,\"description\":\"Lorem ipsum\",\"boardId\":\"335e88e1-e74a-4dc5-8be7-7da34b021439\",\"userId\":null,\"columnId\":null}, 201, [15ms]","level":"info"}
+{"message":"    method: POST, URL: /boards/335e88e1-e74a-4dc5-8be7-7da34b021439/tasks, query parameters: {}, request body: {\"title\":\"Task #5\",\"order\":5,\"description\":\"Lorem ipsum\",\"boardId\":\"335e88e1-e74a-4dc5-8be7-7da34b021439\",\"userId\":null,\"columnId\":null}, 201, [256ms]","level":"info"}
+{"message":"    method: POST, URL: /boards/335e88e1-e74a-4dc5-8be7-7da34b021439/tasks, query parameters: {}, request body: {\"title\":\"Task #3\",\"order\":3,\"description\":\"Lorem ipsum\",\"boardId\":\"335e88e1-e74a-4dc5-8be7-7da34b021439\",\"userId\":null,\"columnId\":null}, 201, [260ms]","level":"info"}
+{"message":"    method: POST, URL: /boards/335e88e1-e74a-4dc5-8be7-7da34b021439/tasks, query parameters: {}, request body: {\"title\":\"Task #4\",\"order\":4,\"description\":\"Lorem ipsum\",\"boardId\":\"335e88e1-e74a-4dc5-8be7-7da34b021439\",\"userId\":null,\"columnId\":null}, 201, [259ms]","level":"info"}
+{"message":"    method: GET, URL: /boards/335e88e1-e74a-4dc5-8be7-7da34b021439/tasks/4946cc71-ebfb-4681-a9e2-5fac61f75a3f, query parameters: {}, request body: {}, 200, [8ms]","level":"info"}
+{"message":"    method: GET, URL: /boards/335e88e1-e74a-4dc5-8be7-7da34b021439/tasks/6ed4f4c3-723f-4ed2-8e17-1ca708417412, query parameters: {}, request body: {}, 200, [7ms]","level":"info"}
+{"message":"    method: GET, URL: /boards/335e88e1-e74a-4dc5-8be7-7da34b021439/tasks/52d6cb0f-ebb3-42dd-8c42-81c7c99d0319, query parameters: {}, request body: {}, 200, [7ms]","level":"info"}
+{"message":"    method: GET, URL: /boards/335e88e1-e74a-4dc5-8be7-7da34b021439/tasks/fd2f4817-3e43-4281-9989-d980d57fbd63, query parameters: {}, request body: {}, 200, [7ms]","level":"info"}
+{"message":"    method: GET, URL: /boards/335e88e1-e74a-4dc5-8be7-7da34b021439/tasks/ed64f93f-4b96-4115-b865-4b42af999526, query parameters: {}, request body: {}, 200, [8ms]","level":"info"}
+{"message":"    method: DELETE, URL: /boards/335e88e1-e74a-4dc5-8be7-7da34b021439, query parameters: {}, request body: {}, 200, [2ms]","level":"info"}
+{"message":"   Not Found!","level":"error"}
+{"message":"    method: GET, URL: /boards/335e88e1-e74a-4dc5-8be7-7da34b021439/tasks/4946cc71-ebfb-4681-a9e2-5fac61f75a3f, query parameters: {}, request body: {}, 404, [10ms]","level":"info"}
+{"message":"   Not Found!","level":"error"}
+{"message":"    method: GET, URL: /boards/335e88e1-e74a-4dc5-8be7-7da34b021439/tasks/6ed4f4c3-723f-4ed2-8e17-1ca708417412, query parameters: {}, request body: {}, 404, [9ms]","level":"info"}
+{"message":"   Not Found!","level":"error"}
+{"message":"    method: GET, URL: /boards/335e88e1-e74a-4dc5-8be7-7da34b021439/tasks/52d6cb0f-ebb3-42dd-8c42-81c7c99d0319, query parameters: {}, request body: {}, 404, [8ms]","level":"info"}
+{"message":"   Not Found!","level":"error"}
+{"message":"    method: GET, URL: /boards/335e88e1-e74a-4dc5-8be7-7da34b021439/tasks/fd2f4817-3e43-4281-9989-d980d57fbd63, query parameters: {}, request body: {}, 404, [7ms]","level":"info"}
+{"message":"   Not Found!","level":"error"}
+{"message":"    method: GET, URL: /boards/335e88e1-e74a-4dc5-8be7-7da34b021439/tasks/ed64f93f-4b96-4115-b865-4b42af999526, query parameters: {}, request body: {}, 404, [7ms]","level":"info"}
+{"message":"    method: DELETE, URL: /boards/a4dfd83e-3f44-42ba-ad55-d266d41a78b2, query parameters: {}, request body: {}, 200, [3ms]","level":"info"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 201, [12ms]","level":"info"}
+{"message":"    method: POST, URL: /boards/a33d3b1a-85e2-4130-9299-efa1b43c7eeb/tasks, query parameters: {}, request body: {\"title\":\"Autotest task\",\"order\":0,\"description\":\"Lorem ipsum\",\"userId\":null,\"boardId\":null,\"columnId\":null}, 201, [3ms]","level":"info"}
+{"message":"    method: GET, URL: /boards/a33d3b1a-85e2-4130-9299-efa1b43c7eeb/tasks, query parameters: {}, request body: {}, 200, [2ms]","level":"info"}
+{"message":"    method: GET, URL: /boards/a33d3b1a-85e2-4130-9299-efa1b43c7eeb/tasks, query parameters: {}, request body: {}, 200, [3ms]","level":"info"}
+{"message":"    method: GET, URL: /boards/a33d3b1a-85e2-4130-9299-efa1b43c7eeb/tasks/23725d53-4fa4-445e-88bc-b0dbc93f89d9, query parameters: {}, request body: {}, 200, [2ms]","level":"info"}
+{"message":"    method: POST, URL: /boards/a33d3b1a-85e2-4130-9299-efa1b43c7eeb/tasks, query parameters: {}, request body: {\"title\":\"Autotest task\",\"order\":0,\"description\":\"Lorem ipsum\",\"userId\":null,\"boardId\":null,\"columnId\":null}, 201, [8ms]","level":"info"}
+{"message":"    method: DELETE, URL: /boards/a33d3b1a-85e2-4130-9299-efa1b43c7eeb/tasks/20285acd-998c-48bc-9249-281311fda431, query parameters: {}, request body: {}, 200, [5ms]","level":"info"}
+{"message":"    method: POST, URL: /boards/a33d3b1a-85e2-4130-9299-efa1b43c7eeb/tasks, query parameters: {}, request body: {\"title\":\"Autotest task\",\"order\":0,\"description\":\"Lorem ipsum\",\"userId\":null,\"boardId\":null,\"columnId\":null}, 201, [4ms]","level":"info"}
+{"message":"    method: PUT, URL: /boards/a33d3b1a-85e2-4130-9299-efa1b43c7eeb/tasks/65bd1780-ad46-4170-98e9-0391649d94bf, query parameters: {}, request body: {\"title\":\"Autotest updated task\",\"order\":0,\"description\":\"Lorem ipsum\",\"userId\":null,\"boardId\":\"a33d3b1a-85e2-4130-9299-efa1b43c7eeb\",\"columnId\":null,\"id\":\"65bd1780-ad46-4170-98e9-0391649d94bf\"}, 200, [8ms]","level":"info"}
+{"message":"    method: GET, URL: /boards/a33d3b1a-85e2-4130-9299-efa1b43c7eeb/tasks/65bd1780-ad46-4170-98e9-0391649d94bf, query parameters: {}, request body: {}, 200, [3ms]","level":"info"}
+{"message":"    method: GET, URL: /boards/a33d3b1a-85e2-4130-9299-efa1b43c7eeb/tasks/23725d53-4fa4-445e-88bc-b0dbc93f89d9, query parameters: {}, request body: {}, 200, [2ms]","level":"info"}
+{"message":"    method: DELETE, URL: /boards/a33d3b1a-85e2-4130-9299-efa1b43c7eeb/tasks/23725d53-4fa4-445e-88bc-b0dbc93f89d9, query parameters: {}, request body: {}, 200, [1ms]","level":"info"}
+{"message":"   Not Found!","level":"error"}
+{"message":"    method: GET, URL: /boards/a33d3b1a-85e2-4130-9299-efa1b43c7eeb/tasks/23725d53-4fa4-445e-88bc-b0dbc93f89d9, query parameters: {}, request body: {}, 404, [4ms]","level":"info"}
+{"message":"    method: DELETE, URL: /boards/a33d3b1a-85e2-4130-9299-efa1b43c7eeb, query parameters: {}, request body: {}, 200, [4ms]","level":"info"}
+{"message":"    method: GET, URL: /users, query parameters: {}, request body: {}, 200, [2ms]","level":"info"}
+{"message":"    method: POST, URL: /users, query parameters: {}, request body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 201, [7ms]","level":"info"}
+{"message":"    method: GET, URL: /users/856b657e-3bd2-4638-91fe-a1ff437ac83f, query parameters: {}, request body: {}, 200, [3ms]","level":"info"}
+{"message":"    method: DELETE, URL: /users/856b657e-3bd2-4638-91fe-a1ff437ac83f, query parameters: {}, request body: {}, 200, [4ms]","level":"info"}
+{"message":"    method: POST, URL: /users, query parameters: {}, request body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 201, [7ms]","level":"info"}
+{"message":"    method: DELETE, URL: /users/65fc8a27-edf4-4484-bdff-72f4eb10a89a, query parameters: {}, request body: {}, 200, [2ms]","level":"info"}
+{"message":"    method: POST, URL: /users, query parameters: {}, request body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 201, [4ms]","level":"info"}
+{"message":"    method: PUT, URL: /users/20c42cba-0aef-4c6c-a1b5-f28c982b58db, query parameters: {}, request body: {\"name\":\"Autotest updated TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\",\"id\":\"20c42cba-0aef-4c6c-a1b5-f28c982b58db\"}, 200, [5ms]","level":"info"}
+{"message":"    method: GET, URL: /users/20c42cba-0aef-4c6c-a1b5-f28c982b58db, query parameters: {}, request body: {}, 200, [4ms]","level":"info"}
+{"message":"    method: DELETE, URL: /users/20c42cba-0aef-4c6c-a1b5-f28c982b58db, query parameters: {}, request body: {}, 200, [2ms]","level":"info"}
+{"message":"    method: POST, URL: /users, query parameters: {}, request body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 201, [4ms]","level":"info"}
+{"message":"    method: DELETE, URL: /users/3b87e0c0-8771-48e1-be8c-0bd27fdb6ecc, query parameters: {}, request body: {}, 200, [2ms]","level":"info"}
+{"message":"    method: POST, URL: /users, query parameters: {}, request body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}, 201, [4ms]","level":"info"}
+{"message":"    method: POST, URL: /boards, query parameters: {}, request body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}, 201, [12ms]","level":"info"}
+{"message":"    method: POST, URL: /boards/320bf1af-dd66-49e5-9259-c425c232c987/tasks, query parameters: {}, request body: {\"title\":\"Task #1\",\"order\":1,\"description\":\"Lorem ipsum\",\"userId\":\"12744d20-c617-4191-98c6-dedff4d3a7b0\",\"boardId\":\"320bf1af-dd66-49e5-9259-c425c232c987\"}, 201, [4ms]","level":"info"}
+{"message":"    method: POST, URL: /boards/320bf1af-dd66-49e5-9259-c425c232c987/tasks, query parameters: {}, request body: {\"title\":\"Task #2\",\"order\":2,\"description\":\"Lorem ipsum\",\"userId\":\"12744d20-c617-4191-98c6-dedff4d3a7b0\",\"boardId\":\"320bf1af-dd66-49e5-9259-c425c232c987\"}, 201, [4ms]","level":"info"}
+{"message":"    method: DELETE, URL: /users/12744d20-c617-4191-98c6-dedff4d3a7b0, query parameters: {}, request body: {}, 200, [6ms]","level":"info"}
+{"message":"    method: GET, URL: /boards/320bf1af-dd66-49e5-9259-c425c232c987/tasks/ab49df87-3b4b-4dfd-8370-49420017d5d8, query parameters: {}, request body: {}, 200, [2ms]","level":"info"}
+{"message":"    method: GET, URL: /boards/320bf1af-dd66-49e5-9259-c425c232c987/tasks/155bee2f-1f4c-4b66-bb6a-a9beb74bc9c5, query parameters: {}, request body: {}, 200, [2ms]","level":"info"}
+{"message":"    method: DELETE, URL: /boards/320bf1af-dd66-49e5-9259-c425c232c987/tasks/ab49df87-3b4b-4dfd-8370-49420017d5d8, query parameters: {}, request body: {}, 200, [2ms]","level":"info"}
+{"message":"    method: DELETE, URL: /boards/320bf1af-dd66-49e5-9259-c425c232c987/tasks/155bee2f-1f4c-4b66-bb6a-a9beb74bc9c5, query parameters: {}, request body: {}, 200, [2ms]","level":"info"}
+{"message":"    method: DELETE, URL: /boards/320bf1af-dd66-49e5-9259-c425c232c987, query parameters: {}, request body: {}, 200, [2ms]","level":"info"}

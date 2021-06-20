@@ -1,0 +1,115 @@
+{"message":"   отношение \"columns\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"columns\" не существует","level":"error"}
+{"message":"   отношение \"columns\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"columns\" не существует","level":"error"}
+{"message":"   отношение \"columns\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"columns\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"columns\" уже существует","length":195,"name":"QueryFailedError","severity":"ОШИБКА","code":"42P07","file":"d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\catalog\\heap.c","line":"1164","routine":"heap_create_with_catalog","query":"CREATE TABLE \"columns\" (\"id\" uuid NOT NULL DEFAULT uuid_generate_v4(),\n\t\t\t\t\"title\" character varying(100) NOT NULL,\n\t\t\t\t\"order\" integer NOT NULL,\n\t\t\t\t\"boardId\" uuid,\n\t\t\t\tCONSTRAINT \"PK_4ac339ccbbfed1dcd96812abbd5\" PRIMARY KEY (\"id\"))","parameters":[],"level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"users\" не существует","level":"error"}
+{"message":"   отношение \"boards\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   отношение \"tasks\" не существует","level":"error"}
+{"message":"   столбец \"title\" отношения \"columns\" содержит значения NULL","length":249,"name":"QueryFailedError","severity":"ОШИБКА","code":"23502","schema":"public","table":"columns","column":"title","file":"d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\commands\\tablecmds.c","line":"5452","routine":"ATRewriteTable","query":"ALTER TABLE \"columns\" ADD \"title\" character varying NOT NULL","parameters":[],"level":"error"}
+{"message":"   столбец \"title\" отношения \"columns\" содержит значения NULL","length":249,"name":"QueryFailedError","severity":"ОШИБКА","code":"23502","schema":"public","table":"columns","column":"title","file":"d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\commands\\tablecmds.c","line":"5452","routine":"ATRewriteTable","query":"ALTER TABLE \"columns\" ADD \"title\" character varying NOT NULL","parameters":[],"level":"error"}
+{"message":"   отношение \"columns\" не существует","length":197,"name":"QueryFailedError","severity":"ОШИБКА","code":"42P01","file":"d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\catalog\\namespace.c","line":"434","routine":"RangeVarGetRelidExtended","query":"ALTER TABLE \"columns\" DROP CONSTRAINT \"FK_ac92bfd7ba33174aabef610f361\"","parameters":[],"level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}
+{"message":"   Not Found!","level":"error"}

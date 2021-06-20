@@ -12,20 +12,21 @@ const { POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_HOST, POSTGRES_P
 export default {
   type: "postgres",
   host: POSTGRES_HOST || "localhost",
-  port: POSTGRES_PORT || 5432,
+  port: POSTGRES_PORT || 5433,
   username: POSTGRES_USER || "postgres",
   password: POSTGRES_PASSWORD || "postgres",
   database: POSTGRES_DB || "node_project",
-  // migrationsTableName: "custom_migration_table",
-  synchronize: true,
+  synchronize: false,
   logging: false,
+  migrationsRun: true,
   entities: [
     `src/entity/*.ts`
   ],
-  // migrations: [
-  //   `src/migration/*.ts`
-  // ],
-  // cli: {
-  //   "migrationsDir": "src/migration",
-  // },
+  migrations: [
+    `src/migration/**/*.ts`
+  ],
+  cli: {
+    entitiesDir: "src/entity",
+    migrationsDir: "src/migration",
+  },
 } as ConnectionOptions;

@@ -1,6 +1,6 @@
 import {getManager} from "typeorm";
 import bcrypt from "bcrypt";
-import { IUser } from '../../types';
+import { IUser } from '../../utils/types';
 import ApiErroe from '../../utils/ApiErroe';
 import User from '../../entity/user';
 

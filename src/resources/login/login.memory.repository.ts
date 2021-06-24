@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken'
 import {getManager} from "typeorm";
 import User from '../../entity/user';
 import ApiErroe from '../../utils/ApiErroe';
-import { ILogin } from '../../types';
+import { ILogin } from '../../utils/types';
 
 const loginUser = async (userLogin: ILogin): Promise<string | undefined> => {
   const {login, password} = userLogin

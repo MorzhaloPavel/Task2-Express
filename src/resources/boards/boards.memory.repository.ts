@@ -1,5 +1,5 @@
 import {getManager} from "typeorm";
-import { IBoard } from '../../types';
+import { IBoard } from '../../utils/types';
 import ApiErroe from '../../utils/ApiErroe';
 import Board from "../../entity/boards";
 import Columns from "../../entity/columns";

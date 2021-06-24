@@ -1,5 +1,5 @@
 import {getManager} from "typeorm";
-import { ITask } from '../../types';
+import { ITask } from '../../utils/types';
 import ApiErroe from '../../utils/ApiErroe';
 import Task from '../../entity/tasks'
 

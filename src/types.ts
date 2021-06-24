@@ -27,6 +27,11 @@ export interface IUser {
   password?: string;
 }
 
+export interface ILogin {
+  login: string;
+  password: string;
+}
+
 export interface IDatabase {
   users: IUser[];
   boards: IBoard[];

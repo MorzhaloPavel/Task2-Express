@@ -1,4 +1,5 @@
 import {getManager} from "typeorm";
+import bcrypt from "bcrypt";
 import { IUser } from '../../types';
 import ErrorNotFound from '../../utils/ErrorNotFound';
 import User from '../../entity/user';
@@ -23,7 +24,11 @@ const get = async (id: string): Promise<IUser> => {
   
 const create = async (user: IUser): Promise<IUser | undefined> => {
   const userRepository = getManager().getRepository(User);
-  const userCreate = await userRepository.create(user)
+  const userCreate = await userRepository.create({
+    name: user.name,
+    login: user.login,
+    password: bcrypt.hashSync(user.password, 8)
+  })
   const newUser = await userRepository.save(userCreate);
   if(!newUser){
     throw new ErrorNotFound("Not Found!");

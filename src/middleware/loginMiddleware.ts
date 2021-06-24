@@ -1,22 +1,21 @@
 import Express from 'express';
 import jwt from 'jsonwebtoken'
 import {getManager} from "typeorm";
-// import ErrorNotFound from '../utils/ErrorNotFound';
 import User from '../entity/user';
-
 
 const loginMiddleware = async (req: Express.Request, res: Express.Response, next: Express.NextFunction): Promise<void> => {
   if(req.method === 'OPTIONS') {
     next()
   } else {
+
     const auth = req.headers.authorization
 
     if(!auth) {
-      res.status(401).json({message: "Не авторизован"})
+      res.status(401).json({message: "Unauthorized error"})
       return 
     }
     if(auth.split(' ')[0] !== 'Bearer') {
-      res.status(401).json({message: "Не авторизован"})
+      res.status(401).json({message: "Unauthorized error"})
       return 
     }
     
@@ -29,10 +28,11 @@ const loginMiddleware = async (req: Express.Request, res: Express.Response, next
           if(user) {
             next()
           } else {
-            res.status(403).json({message: "Не авторизован"})
+            res.status(401).json({message: "Unauthorized error"})
           }
-        })} else {
-          res.status(401).json({message: "Не авторизован"})
+        })
+      } else {
+          res.status(401).json({message: "Unauthorized error"})
         }
       }
     );

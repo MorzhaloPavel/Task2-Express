@@ -6,7 +6,7 @@ const logger = createLogger({
   level: 'silly',
   format: format.combine(format.colorize(), format.cli()),
   transports: [
-    new transports.Console(),
+    // new transports.Console(),
     new transports.File({
       filename: './logger/error.log',
       level: 'error',

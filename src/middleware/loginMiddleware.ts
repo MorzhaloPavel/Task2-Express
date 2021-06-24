@@ -11,7 +11,11 @@ const loginMiddleware = async (req: Express.Request, res: Express.Response, next
   } else {
     const auth = req.headers.authorization
 
-    if(!auth && auth.split(' ')[0] !== 'Bearer') {
+    if(!auth) {
+      res.status(401).json({message: "Не авторизован"})
+      return 
+    }
+    if(auth.split(' ')[0] !== 'Bearer') {
       res.status(401).json({message: "Не авторизован"})
       return 
     }

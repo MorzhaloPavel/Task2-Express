@@ -1,6 +1,6 @@
-import { memoryDb } from '../../memoryDb/memoryDb.js';
-import { ITask } from '../../types.js';
-import ErrorNotFound from '../../utils/ErrorNotFound.js';
+import { memoryDb } from '../../memoryDb/memoryDb';
+import { ITask } from '../../types';
+import ErrorNotFound from '../../utils/ErrorNotFound';
 
 let { tasks } = memoryDb;
 

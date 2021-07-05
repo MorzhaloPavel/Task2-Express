@@ -70,3 +70,82 @@ npm run lint
 Press <kbd>F5</kbd> to debug.
 
 For more information, visit: https://code.visualstudio.com/docs/editor/debugging
+
+
+# Docker
+
+## Running application
+
+```
+docker-compose up 
+```
+
+## Getting information about containers
+
+### Working containers
+```
+docker ps
+
+docker ps -a
+```
+### Container logs
+```
+docker logs infinite
+```
+### Container Information
+```
+docker inspect infinite
+```
+
+## Image Management
+
+### List of images
+```
+docker images
+```
+### Creating images
+```
+docker build .
+
+docker build github.com/creack/docker-firefox
+
+docker build - < Dockerfile
+
+docker build - < context.tar.gz
+
+docker build -t eon/infinite .
+
+docker build -f myOtherDockerfile .
+
+curl example.com/remote/Dockerfile | docker build -f - .
+```
+### Deleting an image
+```
+docker rmi nginx
+```
+### Loading a repository in tar (from a file or standard input)
+```
+docker load < ubuntu.tar.gz
+
+docker load --input ubuntu.tar
+```
+### Saving an image to a tar archive
+```
+docker save busybox > ubuntu.tar
+```
+### View Image History
+```
+docker history
+```
+### Creating an image from a container
+```
+docker commit nginx
+```
+### Tagging an image
+```
+docker tag nginx eon01/nginx
+```
+### Push (uploading to the registry) of the image
+```
+docker push eon01/nginx
+```

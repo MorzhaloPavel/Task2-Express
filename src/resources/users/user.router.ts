@@ -1,8 +1,8 @@
 import Express, { Router } from 'express';
 import { StatusCodes } from 'http-status-codes';
-import User from './user.model.js';
-import * as usersService from './user.service.js';
-import { errorResponse } from '../../utils/errorResponse.js';
+import User from './user.model';
+import * as usersService from './user.service';
+import { errorResponse } from '../../utils/errorResponse';
 
 const router: Express.Router = Router();
 
@@ -16,7 +16,7 @@ router.route('/').get(async (_req: Express.Request, res: Express.Response) => {
 router
   .route('/:id')
   .get(async (req: Express.Request, res: Express.Response, next: Express.NextFunction) => {
-     await usersService.get(req.params["id"]!).then(user => {
+     await usersService.get(req.params["id"]).then(user => {
        res.status(200).json(User.toResponse((user as User)))
      }).catch(next)
   });

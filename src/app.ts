@@ -3,21 +3,19 @@ import swaggerUI from 'swagger-ui-express';
 
 import path from 'path';
 import YAML from 'yamljs';
-import { fileURLToPath } from 'url';
 
-import ErrorNotFound from './utils/ErrorNotFound.js';
-import logger from './utils/logger.js'
-import loggerMiddleware from './middleware/loggerMiddleware.js'
-import errorHandler from './middleware/errorHandler.js'
-import { router as userRouter } from './resources/users/user.router.js';
-import { router as boardsRouter } from './resources/boards/boards.router.js';
-import { router as tasksRouter } from './resources/tasks/tasks.router.js';
+import ErrorNotFound from './utils/ErrorNotFound';
+import logger from './utils/logger'
+import loggerMiddleware from './middleware/loggerMiddleware'
+import errorHandler from './middleware/errorHandler'
+import { router as userRouter } from './resources/users/user.router';
+import { router as boardsRouter } from './resources/boards/boards.router';
+import { router as tasksRouter } from './resources/tasks/tasks.router';
 
 
-const dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const app = express();
-const swaggerDocument = YAML.load(path.join(dirname, '../doc/api.yaml'));
+const swaggerDocument = YAML.load(path.join(__dirname, '../doc/api.yaml'));
 
 app.use(express.json());
 

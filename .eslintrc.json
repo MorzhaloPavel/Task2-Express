@@ -1,47 +1,35 @@
 {
+	"parser": "@typescript-eslint/parser",
+  "plugins": [
+		"@typescript-eslint/eslint-plugin",
+		"prettier"
+	],
   "root": true,
   "env": {
     "es2020": true,
     "jasmine": true,
     "jest": true,
-    "node": true
+    "node": true,
+		"commonjs": true
   },
-  "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint"
-  ],
   "parserOptions": {
+		"project": "tsconfig.json",
     "sourceType": "module",
     "ecmaVersion": 2021,
     "ecmaFeatures": {
       "impliedStrict": true
     }
-//    "project": ["./tsconfig.json"]
   },
   "settings": {
-    "noInlineConfig": true,
-    "node": {
-      "resolvePaths": ["node_modules/@types"],
-      "tryExtensions": [".js", ".json", ".node", ".ts", ".d.ts"]
-    },
-    "import/resolver": {
-      "node": {
-        "extensions": [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx"
-        ]
-      }
-    }
+    "noInlineConfig": true
   },
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
     "plugin:node/recommended",
     "airbnb-base",
-    "prettier"
+    "prettier",
+		"plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
     "import/extensions": "off",
@@ -49,8 +37,31 @@
     "node/no-unsupported-features/es-syntax": "off",
     "no-underscore-dangle": "off",
     "import/prefer-default-export": "off",
-    "dot-notation": "off",
-    "import/no-unresolved" : "off",
-    "node/no-missing-import" : "off"
+		"@typescript-eslint/interface-name-prefix": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "next" }],
+    "no-unused-vars": "off",
+    "no-useless-constructor": "off",
+    "class-methods-use-this": "off",
+    "import/no-unresolved": "off",
+    "no-empty-function": "off",
+    "no-use-before-define": "off",
+    "radix": "off",
+    "import/no-extraneous-dependencies": "off",
+    "object-curly-newline": "off",
+    "arrow-parens": "off",
+    "max-len": ["error", { "code": 200 }],
+    "no-mixed-operators": "off",
+    "no-param-reassign": "off",
+    "no-plusplus": "off",
+    "no-console": "warn",
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "lines-between-class-members": "off",
+    "no-else-return": "off",
+		"node/no-missing-import": "off",
+		"dot-notation": "off"
   }
 }

@@ -1,13 +1,14 @@
 import {getManager} from "typeorm";
-import { IUser } from '../../types';
-import ErrorNotFound from '../../utils/ErrorNotFound';
+import bcrypt from "bcrypt";
+import { IUser } from '../../utils/types';
+import ApiErroe from '../../utils/ApiErroe';
 import User from '../../entity/user';
 
 const getAll = async (): Promise<IUser[]> => {
   const userRepository = getManager().getRepository(User);
   const users = await  userRepository.find()
   if(!users){
-    throw new ErrorNotFound("Not Found!");
+    throw ApiErroe.badRequest("Not Found!");
   }
   return users
 }
@@ -16,17 +17,21 @@ const get = async (id: string): Promise<IUser> => {
   const userRepository = getManager().getRepository(User);
   const user = await userRepository.findOne(id)
   if(!user){
-    throw new ErrorNotFound("Not Found!");
+    throw ApiErroe.badRequest("Not Found!");
   }
   return user
 }
   
 const create = async (user: IUser): Promise<IUser | undefined> => {
   const userRepository = getManager().getRepository(User);
-  const userCreate = await userRepository.create(user)
+  const userCreate = await userRepository.create({
+    name: user.name,
+    login: user.login,
+    password: bcrypt.hashSync(user.password, 8)
+  })
   const newUser = await userRepository.save(userCreate);
   if(!newUser){
-    throw new ErrorNotFound("Not Found!");
+    throw ApiErroe.badRequest("Not Found!");
   }
   return newUser
 };
@@ -40,7 +45,7 @@ const update = async (
   user = {...user, ...userData}
   const userUpdate = await userRepository.save(user);
   if(!userUpdate){
-    throw new ErrorNotFound("Not Found!");
+    throw ApiErroe.badRequest("Not Found!");
   }
   return userUpdate;
 };
@@ -49,7 +54,7 @@ const remove = async (userId: string): Promise<boolean> => {
   const userRepository = getManager().getRepository(User);
   const userRemove = await userRepository.delete(userId)
   if(!userRemove){
-    throw new ErrorNotFound("Not Found!");
+    throw ApiErroe.badRequest("Not Found!");
   }
   return !!userRemove
 };

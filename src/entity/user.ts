@@ -1,5 +1,5 @@
 import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
-import { IUser } from '../types';
+import { IUser } from '../utils/types';
 
 @Entity({name: 'users'})
 export default class User {

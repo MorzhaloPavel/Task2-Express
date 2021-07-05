@@ -1,4 +1,4 @@
-import { IBoard } from '../../types';
+import { IBoard } from '../../utils/types';
 import * as boardRepo from './boards.memory.repository';
 import * as tasksService from '../tasks/tasks.service';
 import Board from "../../entity/boards";

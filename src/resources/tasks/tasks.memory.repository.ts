@@ -1,13 +1,13 @@
 import {getManager} from "typeorm";
-import { ITask } from '../../types';
-import ErrorNotFound from '../../utils/ErrorNotFound';
+import { ITask } from '../../utils/types';
+import ApiErroe from '../../utils/ApiErroe';
 import Task from '../../entity/tasks'
 
 const getAll = async (board: string): Promise<ITask[]> =>{
   const taskRepository = getManager().getRepository(Task);
   const tasks = await taskRepository.find({boardId: board})
   if(!tasks){
-    throw new ErrorNotFound("Not Found!");
+    throw ApiErroe.badRequest("Not Found!");
   }
   return tasks
 }
@@ -16,7 +16,7 @@ const get = async (board: string, taskId: string): Promise<ITask> => {
   const taskRepository = getManager().getRepository(Task);
   const task = await taskRepository.findOne({id: taskId, boardId: board})
   if(!task){
-    throw new ErrorNotFound("Not Found!");
+    throw ApiErroe.badRequest("Not Found!");
   }
   return task
 }
@@ -26,7 +26,7 @@ const create = async (task: ITask, boardId: string): Promise<ITask | undefined> 
   const taskCreate = await taskRepository.create({...task, boardId})
   const newTask = await taskRepository.save(taskCreate);
   if(!newTask){
-    throw new ErrorNotFound("Not Found!");
+    throw ApiErroe.badRequest("Not Found!");
   }
   return newTask
 };
@@ -41,7 +41,7 @@ const update = async (
   task = {...task, ...taskData}
   const taskUpdate = await taskRepository.save(task);
   if(!taskUpdate){
-    throw new ErrorNotFound("Not Found!");
+    throw ApiErroe.badRequest("Not Found!");
   }
   return taskUpdate;
 };
@@ -50,7 +50,7 @@ const remove = async (board: string, taskId: string): Promise<boolean> => {
   const taskRepository = getManager().getRepository(Task);
   const taskRemove = await taskRepository.delete({id: taskId, boardId: board})
   if(!taskRemove){
-    throw new ErrorNotFound("Not Found!");
+    throw ApiErroe.badRequest("Not Found!");
   }
   return !!taskRemove
 };
@@ -67,7 +67,7 @@ const deleteUserFromTask = async (userI: string): Promise<boolean> => {
   })
   const taskUpdate = await taskRepository.save(taskNull);
   if(!taskUpdate){
-    throw new ErrorNotFound("Not Found!");
+    throw ApiErroe.badRequest("Not Found!");
   }
   return !!taskUpdate
 };
@@ -76,7 +76,7 @@ const deleteTasksFromBoard = async (board: string): Promise<boolean> => {
   const taskRepository = getManager().getRepository(Task);
   const taskBoardDelete = await taskRepository.delete({boardId: board})
   if(!taskBoardDelete){
-    throw new ErrorNotFound("Not Found!");
+    throw ApiErroe.badRequest("Not Found!");
   }
   return !!taskBoardDelete
 };

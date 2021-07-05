@@ -25,6 +25,7 @@ const loggerMiddleware = (req: express.Request, res: express.Response, next: exp
         body
       )}, ${statusCode}, [${ms}ms]`
     );
+    
   });
 };
 

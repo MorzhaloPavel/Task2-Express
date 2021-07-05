@@ -1,4 +1,4 @@
-import { ITask } from '../../types';
+import { ITask } from '../../utils/types';
 import * as taskRepo from './tasks.memory.repository';
 
 const getAll = (boardId: string): Promise<ITask[]> => taskRepo.getAll(boardId);

@@ -161,8 +161,30 @@ $ npm install
 ## Running the app
 
 ```bash
-# development
-$ npm run start
-
 # watch mode
 $ npm run start:dev
+```
+
+# Result Artillery
+
+## Running the app
+
+```bash
+$ artillery run artillery.yml
+```
+
+## Express
+|--------------|----------------------------------|--------------------------------------------------------------------------|
+| Scenarios    | [launched, completed]            | 1500, 1500                                                               |
+| Requests     | [completed, response/sec]        | 7500, 41.59s                                                             |
+| Response     | [min, max, median, 95, 99] (msec)| 2, 1775, 28, 689.5, 1275                                                 |
+| Success      | [ratio]                          | 100.00%                                                                  |
+| Status Codes | [code:count]                     | 200: 6000, 201: 1500                                                     |
+
+## Fastify
+|--------------|----------------------------------|----------------------------------------------------------------------|
+| Scenarios    | [launched, completed]            | 1500, 1500                                                           |
+| Requests     | [completed, response/sec]        | 7500, 41.58s                                                         |
+| Response     | [min, max, median, 95, 99] (msec)| 2, 426, 24, 116, 209                                                 |
+| Success      | [ratio]                          | 100.00%                                                              |
+| Status Codes | [code:count]                     | 200: 6000, 201: 1500                                                 |

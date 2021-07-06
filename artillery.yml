@@ -1,0 +1,45 @@
+config:
+  target: "http://localhost:4000"
+  phases:
+    - duration: 60
+      arrivalRate: 5
+    - duration: 120
+      arrivalRate: 10
+  payload:
+    - path: "create.csv"
+      fields:
+        - "name"
+        - "login"
+        - "password"
+    - path: "up.csv"
+      fields:
+        - "upName"
+        - "upLogin"
+        - "upPassword"
+  defaults:
+    headers:
+      authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0YmI4M2I4MS1hYjFkLTQ0NzgtYmQyMC1lYzkxNDAwNmU4ZjgiLCJsb2dpbiI6ImFkbWluIiwiaWF0IjoxNjI1NTcwNzQ0LCJleHAiOjE2MjU2NTcxNDR9.herfUjEZAliaD_5UR7c-dDBw9dbXWCuhdiDe1e56r6k'
+
+scenarios:
+  - flow:
+    - get:
+        url: "/users"
+    - post:
+        url: "/users"
+        json:
+          name: '{{ name }}'
+          login: '{{ login }}'
+          password: '{{ password }}'
+        capture:
+          json: id
+          as: id
+    - get:
+        url: "/users/{{id}}"
+    - put:
+        url: "/users/{{id}}"
+        json:
+          name: '{{ upName }}'
+          login: '{{ upLogin }}'
+          password: '{{ upPassword }}'
+    - delete:
+        url: "/users/{{id}}"

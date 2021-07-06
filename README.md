@@ -149,3 +149,20 @@ docker tag nginx eon01/nginx
 ```
 docker push eon01/nginx
 ```
+
+# Nest
+
+## Installation
+
+```bash
+$ npm install
+```
+
+## Running the app
+
+```bash
+# development
+$ npm run start
+
+# watch mode
+$ npm run start:dev

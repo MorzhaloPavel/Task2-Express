@@ -1,32 +1,70 @@
-import { ITask } from '../../utils/types';
-import * as taskRepo from './tasks.memory.repository';
+// import { Injectable, NotFoundException } from '@nestjs/common';
+// import { InjectRepository } from '@nestjs/typeorm';
+// import Task from 'src/entity/tasks.entity';
+// import { Repository } from 'typeorm';
+// import { CreateTasksDto } from "../dto/create-tasks.dto";
 
-const getAll = (boardId: string): Promise<ITask[]> => taskRepo.getAll(boardId);
+// @Injectable()
+// export class TasksService {
+//   constructor(
+//     @InjectRepository(Task)
+//     private tasksRepository: Repository<Task>,
+//   ) {}
 
-const get = (boardId: string, taskId: string): Promise<ITask> =>
-  taskRepo.get(boardId, taskId);
+//   async getAll(boardId: string): Promise<Task[]> {
+//     return await this.tasksRepository.find({boardId});
+//   }
 
-const create = (task: ITask, boardId: string): Promise<ITask | undefined> =>
-  taskRepo.create(task, boardId);
+//   async create(boardId: string, dto: CreateTasksDto): Promise<Task> {
+//     const task = await this.tasksRepository.create({...dto, boardId});
+//     return await this.tasksRepository.save(task)
+//   }
 
-const update = (boardId: string, taskId: string, taskData: ITask): Promise<ITask | null | undefined> =>
-  taskRepo.update(boardId, taskId, taskData);
+//   async get(boardId: string, id: string): Promise<Task> {
+//     const task = await this.tasksRepository.findOne({id, boardId});
+//     if(!task) {
+//       throw new NotFoundException('Task Not Found')
+//     }
+//     return task
+//   }
 
-const remove = (boardId: string, taskId: string): Promise<boolean> =>
-  taskRepo.remove(boardId, taskId);
+//   async update(boardId: string, id: string, dto: CreateTasksDto): Promise<Task> {
+//     const task = await this.tasksRepository.findOne({id, boardId})
+//     const taskUpdate = await this.tasksRepository.save({...task, ...dto})
+//     if(!taskUpdate) {
+//       throw new NotFoundException('Task Not Found')
+//     }
+//     return taskUpdate
+//   }
 
-const deleteAllTasksFromBoard = (boardId: string): Promise<boolean> =>
-  taskRepo.deleteTasksFromBoard(boardId);
+//   async remove(boardId: string, id: string): Promise<void> {
+//     const task = await this.tasksRepository.findOne({id, boardId});
+//     if(!task) {
+//       throw new NotFoundException('Task Not Found')
+//     }
+//     await this.tasksRepository.delete({id, boardId});
+//   }
 
-const deleteUserFromTask = (userId: string): Promise<boolean> =>
-  taskRepo.deleteUserFromTask(userId);
+//   async deleteUserFromTask(userId: string): Promise<void> {
+//     const task = await this.tasksRepository.find({userId})
+//     if(!task) {
+//       throw new NotFoundException('Task Not Found')
+//     }
+//     const taskNull = task.map(user => {
+//       if(user.userId === userId) {
+//         user.userId = null
+//         return user
+//       }
+//       return user
+//     })
+//     await this.tasksRepository.save(taskNull)
+//   }
 
-export {
-  getAll,
-  get,
-  create,
-  update,
-  remove,
-  deleteAllTasksFromBoard,
-  deleteUserFromTask,
-};
+//   async deleteTasksFromBoard(boardId: string): Promise<void> {
+//     const task = await this.tasksRepository.find({boardId});
+//     if(!task) {
+//       throw new NotFoundException('Task Not Found')
+//     }
+//     await this.tasksRepository.delete({boardId});
+//   }
+// }

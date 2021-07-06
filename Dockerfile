@@ -1,13 +1,13 @@
 FROM node:14.17-alpine
 
-WORKDIR /usr/app
+WORKDIR /app
 
-COPY package*.json .
+COPY package*.json ./
 
 RUN npm install
 
 COPY . .
 
-EXPOSE 8080
+COPY ./dist ./dist
 
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "start:dev"]

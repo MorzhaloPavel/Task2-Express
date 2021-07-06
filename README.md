@@ -174,6 +174,7 @@ $ artillery run artillery.yml
 ```
 
 ## Express
+|              |                                  |                                                                          |
 |--------------|----------------------------------|--------------------------------------------------------------------------|
 | Scenarios    | [launched, completed]            | 1500, 1500                                                               |
 | Requests     | [completed, response/sec]        | 7500, 41.59s                                                             |
@@ -182,6 +183,7 @@ $ artillery run artillery.yml
 | Status Codes | [code:count]                     | 200: 6000, 201: 1500                                                     |
 
 ## Fastify
+|              |                                  |                                                                      |
 |--------------|----------------------------------|----------------------------------------------------------------------|
 | Scenarios    | [launched, completed]            | 1500, 1500                                                           |
 | Requests     | [completed, response/sec]        | 7500, 41.58s                                                         |

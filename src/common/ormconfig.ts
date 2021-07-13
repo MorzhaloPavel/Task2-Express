@@ -1,6 +1,6 @@
 import {ConnectionOptions} from "typeorm";
-import dotenv from 'dotenv';
-import path from "path";
+import * as dotenv from 'dotenv';
+import * as path from "path";
 
 dotenv.config({
   path: path.join(__dirname, '../../.env'),
@@ -17,13 +17,12 @@ export default {
   password: POSTGRES_PASSWORD || "postgres",
   database: POSTGRES_DB || "node_project",
   synchronize: false,
-  logging: false,
   migrationsRun: true,
   entities: [
-    `src/entity/*.ts`
+    `dist/entity/*.js`
   ],
   migrations: [
-    `src/migration/**/*.ts`
+    `dist/migration/*.js`
   ],
   cli: {
     entitiesDir: "src/entity",

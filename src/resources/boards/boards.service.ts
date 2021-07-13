@@ -1,27 +1,55 @@
-import { IBoard } from '../../utils/types';
-import * as boardRepo from './boards.memory.repository';
-import * as tasksService from '../tasks/tasks.service';
-import Board from "../../entity/boards";
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import Columns from 'src/entity/columns.entity';
+import { Repository } from 'typeorm';
+import  Board  from '../../entity/boards.entity';
+import { CreateBoardsDto } from "../dto/create-boards.dto";
+import { TasksService } from '../tasks/tasks.service';
 
+@Injectable()
 
-const getAll = (): Promise<IBoard[]> => 
-  boardRepo.getAll();
+export class BoardsService {
+  constructor(
+    @InjectRepository(Board) private boardsRepository: Repository<Board>,
+    @InjectRepository(Columns) private columnsRepository: Repository<Columns>,
+    private tasksService: TasksService
+  ) {}
 
-const get = (id: string): Promise<IBoard | undefined> => 
-  boardRepo.get(id);
+  async getAll(): Promise<Board[]> {
+    return await this.boardsRepository.find({relations: ["columns"]});
+  }
 
-const create = (board: IBoard): Promise<IBoard | undefined> =>
-  boardRepo.create(board);
+  async create(dto: CreateBoardsDto): Promise<Board> {
+    const boardCreate = await this.boardsRepository.create(dto)
+    const columnsCreate = await this.columnsRepository.create(dto.columns)
+    boardCreate.columns = columnsCreate
+    await this.columnsRepository.save(columnsCreate);
+    return await this.boardsRepository.save(boardCreate);
+  }
 
-const update = (id: string, board: Board): Promise<IBoard | null | undefined> => 
-  boardRepo.update(id, board);
+  async get(id: string): Promise<Board> {
+    const board = await this.boardsRepository.findOne(id, {relations: ["columns"]});
+    if(!board) {
+      throw new NotFoundException('Board Not Found')
+    }
+    return board
+  }
 
-const remove = (id: string): Promise<[boolean, boolean]> =>
-  Promise.all([tasksService.deleteAllTasksFromBoard(id), boardRepo.remove(id)]);
+  async update(id: string, dto: CreateBoardsDto): Promise<Board> {
+    const board = await this.boardsRepository.findOne(id)
+    const boardUpdate = await this.boardsRepository.save({...board, ...dto})
+    if(!boardUpdate) {
+      throw new NotFoundException('Board Not Found')
+    }
+    return boardUpdate
+  }
 
-export { 
-  getAll, 
-  get, 
-  create, 
-  update, 
-  remove };
+  async remove(id: string): Promise<void> {
+    const board = await this.boardsRepository.findOne(id);
+    if(!board) {
+      throw new NotFoundException('Board Not Found')
+    }
+    await this.tasksService.deleteTasksFromBoard(id)
+    await this.boardsRepository.delete(id);
+  }
+}
